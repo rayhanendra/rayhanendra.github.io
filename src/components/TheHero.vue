@@ -66,14 +66,6 @@ onMounted(() => {
         </button>
       </div>
       <div class="tw-col-span-12 sm:tw-col-span-6 tw-flex tw-justify-end">
-        <!-- <div class="tw-relative tw-w-96 tw-h-72">
-          <img
-            src="@/assets/images/hero.png"
-            alt="hero"
-            class="tw-absolute -tw-bottom-4 -tw-right-4"
-          />
-          <div class="tw-border tw-border-[#64FFDA] tw-w-full tw-h-full"></div>
-        </div> -->
         <div class="tw-relative tw-w-96 tw-h-72">
           <img src="@/assets/images/hero.png" alt="hero" />
           <div
