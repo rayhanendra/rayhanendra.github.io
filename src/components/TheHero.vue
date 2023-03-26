@@ -60,7 +60,7 @@ onMounted(() => {
         </div>
 
         <button
-          class="tw-mt-10 tw-p-4 tw-py-[12px] tw-px-8 tw-border tw-border-[#64FFDA] tw-text-[#64FFDA] tw-text-base tw-font-semibold tw-transition tw-duration-300 tw-ease-in-out tw-transform hover:tw-text-[#000000] hover:tw-bg-[#64FFDA] hover:tw-scale-105"
+          class="tw-mt-10 tw-p-4 tw-py-[12px] tw-px-8 tw-border tw-border-yellow-300 tw-text-yellow-300 tw-text-base tw-font-semibold tw-transition tw-duration-300 tw-ease-in-out tw-transform hover:tw-text-[#000000] hover:tw-bg-yellow-300 hover:tw-scale-105"
         >
           Check Resume!
         </button>
@@ -69,17 +69,19 @@ onMounted(() => {
         <div class="tw-relative tw-w-96 tw-h-72">
           <img src="@/assets/images/hero.png" alt="hero" />
           <div
-            class="tw-absolute -tw-top-4 -tw-left-4 tw-border tw-border-[#64FFDA] tw-w-full tw-h-full"
+            class="tw-absolute -tw-top-4 -tw-left-4 tw-border tw-border-yellow-300 tw-w-full tw-h-full"
           ></div>
         </div>
       </div>
     </div>
-    <div class="tw-overflow-clip tw-py-4 tw-mt-14 tw-border-t tw-border-b tw-border-[#233554]">
+    <div
+      class="tw-overflow-clip tw-py-4 tw-mt-14 tw-border-t tw-border-b tw-border-gray-400 tw-border-opacity-10"
+    >
       <div ref="textLoopRef" class="tw-whitespace-nowrap">
         <span
           v-for="tool in tools"
           :key="tool"
-          class="tw-inline-block tw-w-6 tw-mr-14 tw-text-[#64FFDA]"
+          class="tw-inline-block tw-w-6 tw-mr-14 tw-text-yellow-300"
         >
           <div class="">
             {{ tool }}
