@@ -1,7 +1,7 @@
 <template>
   <div class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28">
     <BaseTitle number="02" title="Where I've Worked" />
-    <div class="tw-flex tw-gap-12">
+    <div class="tw-flex tw-gap-12 tw-h-[364px]">
       <div class="tw-flex tw-flex-col tw-w-1/3 tw-h-fit">
         <div
           v-for="(item, index) in data"

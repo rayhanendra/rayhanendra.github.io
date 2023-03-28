@@ -74,3 +74,20 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+::-webkit-scrollbar {
+  width: 0.1rem;
+}
+
+::-webkit-scrollbar-track {
+  /* background: var(--color-background-mute); */
+  background: rgb(156 163 175 / 0.1);;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FACA38;
+  cursor: pointer;
+  width: 0.5rem;
+}
+
+
