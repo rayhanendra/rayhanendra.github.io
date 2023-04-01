@@ -31,11 +31,16 @@ import boongeon3 from '@/assets/images/projects/boongeon/boongeon3.png'
 
 export const data: IProject[] = [
   {
+    id: '1',
     type: 'ui/ux',
     year: '2020',
-    title: 'OBUCE - UI/UX',
+    title: 'Obuce',
     subtitle: 'Obuce - Obese Reducing App',
     image: obuce,
+    madeAt: 'UX Research Competition',
+    buildWith: ['Figma'],
+    link: 'https://www.figma.com/file/mMKMx6uGYs7KhKrbUkxqoL/Mamen-Today?node-id=0%3A1&t=mXHmxL16ycwtspn4-1',
+    github: '',
     description: [
       'OBUCE - An application that could automatically determine the best diet to help the obese to do a diet based on their body needs such as calories and nutrition. The users will get their very own recommended meals and may differ from every other user. The user can cook their meal with the provided recipe or order the meal then it will be delivered in no time.',
       'This project was created for a UX Research competition with “well-being” as the main topic. It was created by me and both of my friends, Ali and Ojan. I and Ali participated as the UX Designer and Ojan as the UX Researcher. The research of this project was carried out by interviewing a few friends from our group and was conducted online due to the pandemic.',
@@ -62,12 +67,16 @@ export const data: IProject[] = [
     ]
   },
   {
+    id: '2',
     type: 'web',
     year: '2020',
-    title: 'DRAMAGON - WEB APP',
+    title: 'Dramagon',
     subtitle: 'Dramagon - Dramaga Online Forum',
     image: dramagon,
+    link: '',
     github: 'https://github.com/rayhanendra/Dramagon',
+    madeAt: 'University Project',
+    buildWith: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
     description: [
       'Dramagon is an online forum for the dramaga people to advertise their business and for the newcomers like the new students to get to know better to the city. The user also could read the latest information about Dramaga city.',
       'This project was created because of the lack of media to promote business and information around dramaga. And people often get confused about the latest event happened in Dramaga city.',
@@ -95,11 +104,16 @@ export const data: IProject[] = [
     ]
   },
   {
+    id: '3',
     type: 'design',
     year: '2020',
-    title: 'BKKBN LOGO CONCEPT - DESIGN',
+    title: 'BKKBN Logo Concept',
     subtitle: 'BKKBN Logo Concept',
     image: bkkbn,
+    madeAt: 'Personal Project',
+    buildWith: ['Adobe Illustrator'],
+    link: '',
+    github: '',
     description: [
       'A BKKBN logo that gives a warm and supporting atmosphere for the BKKBN and also provides the youth and millennial feels.',
       'This logo was created when the BKKBN started a contest to recreate their current logo to be more Millenials and youth-oriented.',
@@ -118,11 +132,16 @@ export const data: IProject[] = [
     ]
   },
   {
+    id: '4',
     type: 'web',
     year: '2020',
-    title: 'SAHABAT TUTOR - WEB APP',
+    title: 'Sahabat Tutor',
     subtitle: 'Sahabat Tutor - Admin Management Website ',
     image: tutor,
+    madeAt: 'Codepanda',
+    buildWith: ['NextJs', 'Redux Toolkit', 'MaterialUI', 'ExpressJs', 'MongoDB'],
+    link: '',
+    github: '',
     description: [
       'Sahabat Tutor is a mobile app providing college students to book their tutors for the lectures.',
       'But I worked for the development of the admin management website.'
@@ -135,11 +154,16 @@ export const data: IProject[] = [
     ]
   },
   {
+    id: '5',
     type: 'web',
     year: '2021',
-    title: 'INTERNSHIP MANAGEMENT IPB - WEB APP',
-    subtitle: 'Internship Management IPB - MBKM',
+    title: 'IPB Internship Management System',
+    subtitle: 'IPB Internship Management System - MBKM',
     image: cda,
+    madeAt: 'Codepanda',
+    buildWith: ['NextJs', 'MaterialUI', 'ExpressJs', 'MongoDB'],
+    link: '',
+    github: '',
     description: [
       'The website provides IPB students to manage their internship activities and to communicate with their supervisors.',
       'This project is considered huge for me with almost 6 months of development. And this project consisting 3 type of roles: admin, student and supervisor. It has around 29 pages with multiple popup dialog in most of each pages. '
@@ -168,11 +192,15 @@ export const data: IProject[] = [
     ]
   },
   {
+    id: '6',
     type: 'game',
     year: '2020',
-    title: 'BOONGEON - GAME',
+    title: 'Boongeon',
     subtitle: 'Boongeon - Unity 3D PC Game',
     image: boongeon3,
+    madeAt: 'University Project',
+    buildWith: ['Unity', 'Blender'],
+    link: '',
     github: 'https://github.com/rayhanendra/Boongeon-Grafkom',
     description: [
       'Boongeon Is a 3D PC game. The task as a player is to defeat all enemies for getting  the elemental books used to eliminate the last boss.',

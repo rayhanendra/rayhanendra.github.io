@@ -1,7 +1,7 @@
 <template>
   <div class="tw-flex tw-gap-6">
     <div class="tw-pb-6">
-      <span class="tw-text-xl tw-font-mono tw-text-yellow-400">{{ number }}. </span>
+      <span v-if="number" class="tw-text-xl tw-font-mono tw-text-yellow-400">{{ number }}. </span>
       <span class="tw-font-bold tw-text-2xl tw-text-white">{{ title }}</span>
     </div>
     <div
@@ -14,7 +14,7 @@
 defineProps({
   number: {
     type: String,
-    required: true
+    required: false
   },
   title: {
     type: String,

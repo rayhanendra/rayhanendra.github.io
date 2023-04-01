@@ -1,12 +1,16 @@
 interface IProject {
+  id: string
   type: string
   year: string
   title: string
   subtitle: string
   image: string
-  github?: string
+  madeAt: string
+  buildWith: string[]
+  link: string
+  github: string
   description: string[]
-  process?: {
+  process: {
     image: string
     desc: string
   }[]
