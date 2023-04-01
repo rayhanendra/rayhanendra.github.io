@@ -40,6 +40,17 @@
                 {{ description }}
               </li>
             </ul>
+            <div
+              class="tw-flex tw-flex-wrap tw-gap-2 tw-py-4 tw-mt-4 tw-border-t tw-border-gray-400 tw-border-opacity-10"
+            >
+              <div
+                v-for="(tool, index) in item.buildAt"
+                :key="index"
+                class="tw-inline-block tw-px-2 tw-py-1 tw-mr-2 tw-mb-2 tw-text-sm tw-text-gray-400 tw-bg-gray-800 tw-rounded-full tw-transition tw-duration-300 tw-ease-in-out hover:tw-bg-yellow-400 hover:tw-text-gray-800"
+              >
+                {{ tool }}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -64,6 +75,18 @@ const data = ref([
       'The technologies I work with include Vue JS and React JS',
       'I have also optimized the user interface and system architecture of some projects by following industry best practices',
       'I work in close collaboration with technical lead, project team, and CEO directly to achieve project objectives'
+    ],
+    buildAt: [
+      'Vue3',
+      'React JS',
+      'Next Js',
+      'Webview',
+      'Tailwind CSS',
+      'Material UI',
+      'Storybook',
+      'Vuex',
+      'Pinia',
+      'Vite'
     ]
   },
   {
@@ -76,7 +99,8 @@ const data = ref([
       'I collaborate closely with other staff members, including front-end and back-end developers, quality assurance personnel, technical leads, and project managers',
       'Our team engages in regular discussions to address any challenges that arise and find effective solutions',
       'Direct communication and collaboration are critical to ensuring that our work is aligned with project goals'
-    ]
+    ],
+    buildAt: ['Vue Js', 'LESS']
   },
   {
     title: 'Frontend Engineer Intern',
@@ -89,7 +113,8 @@ const data = ref([
       'I collaborated with a back-end intern, supervised by the technical lead, to implement the features.',
       'Direct communication and collaboration are critical to ensuring that our work is aligned with project goals',
       'The experience at Andalin provided me with valuable hands-on development experience and further developed my technical skills'
-    ]
+    ],
+    buildAt: ['Vue Js', 'SCSS', 'Tailwind CSS', 'Vuex']
   }
 ])
 </script>

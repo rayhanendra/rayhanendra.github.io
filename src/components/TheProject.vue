@@ -61,6 +61,9 @@ import { ref, computed } from 'vue'
 import BaseTitle from './BaseTitle.vue'
 import ProjectDialog from './ProjectDialog.vue'
 import { data } from '@/data/data'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const tabs = ref(['All', 'Web', 'UI/UX', 'Design', 'Game', 'Publication'])
 const activeTab = ref('All')
@@ -93,7 +96,12 @@ const filteredData = computed(() => {
 const openDialog = (item: any) => {
   projectItem.value = item
   projectDialogRef.value?.openDialog()
-  console.log('clicked', projectItem)
+
+  router.push({
+    query: {
+      id: item.id
+    }
+  })
 }
 </script>
 

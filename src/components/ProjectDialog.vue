@@ -61,11 +61,14 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router';
 import BaseDialog from './BaseDialog.vue'
 
 defineProps<{
   project: any
 }>()
+
+const router = useRouter()
 
 const showDialog = ref(false)
 
@@ -75,6 +78,8 @@ const openDialog = () => {
 
 const closeDialog = () => {
   showDialog.value = false
+
+  router.push('/')
 }
 
 defineExpose({
