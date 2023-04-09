@@ -1,15 +1,15 @@
 <template>
-  <div class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28">
+  <div class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28 tw-px-4">
     <BaseTitle number="02" title="Where I've Worked" />
-    <div class="tw-flex tw-gap-12 tw-h-[364px]">
-      <div class="tw-flex tw-flex-col tw-w-1/3 tw-h-fit">
+    <div class="tw-flex tw-flex-col sm:tw-flex-row tw-gap-12 tw-h-[364px]">
+      <div class="tw-flex tw-flex-row sm:tw-flex-col tw-w-full sm:tw-w-1/3 tw-h-fit">
         <div
           v-for="(item, index) in data"
           :key="index"
-          class="tw-px-3 tw-py-4 tw-w-full tw-text-gray-400 hover:tw-text-yellow-400 tw-border-l tw-border-opacity-10 tw-cursor-pointer hover:tw-bg-yellow-800 hover:tw-bg-opacity-10 hover:tw-opacity-100 tw-transition tw-duration-300 tw-ease-in-out"
+          class="tw-px-3 tw-py-4 tw-w-full tw-text-gray-400 hover:tw-text-yellow-400 tw-border-b sm:tw-border-b-0 sm:tw-border-l tw-border-opacity-10 tw-cursor-pointer hover:tw-bg-yellow-800 hover:tw-bg-opacity-10 hover:tw-opacity-100 tw-transition tw-duration-300 tw-ease-in-out"
           :class="
             index === activeIndex
-              ? 'tw-border-l tw-border-yellow-400 tw-border-opacity-100'
+              ? 'tw-border-yellow-400 tw-border-opacity-100'
               : 'tw-border-gray-400'
           "
           @click="activeIndex = index"
@@ -25,7 +25,7 @@
           class="tw-transition tw-duration-700 tw-ease-in-out tw-opacity-100"
           :class="
             index === activeIndex
-              ? 'tw-opacity-100 tw-transform tw-translate-x-10'
+              ? 'tw-opacity-100 tw-transform -tw-translate-y-5 sm:tw-translate-y-0 sm:tw-translate-x-2 md:tw-translate-x-5'
               : 'tw-opacity-0 tw-invisible'
           "
         >
@@ -35,7 +35,7 @@
               <span class="tw-ml-2 tw-font-semibold tw-text-yellow-400">@ {{ item.company }}</span>
             </div>
             <div class="tw-text-sm tw-text-gray-400 tw-font-mono tw-pb-4">{{ item.date }}</div>
-            <ul class="tw-flex tw-flex-col tw-gap-2 tw-text-gray-400 tw-list-disc">
+            <ul class="tw-flex tw-flex-col tw-gap-2 tw-text-gray-400 sm:tw-list-disc tw-pr-4">
               <li v-for="(description, index) in item.descriptions" :key="index">
                 {{ description }}
               </li>
@@ -100,7 +100,7 @@ const data = ref([
       'Our team engages in regular discussions to address any challenges that arise and find effective solutions',
       'Direct communication and collaboration are critical to ensuring that our work is aligned with project goals'
     ],
-    buildAt: ['Vue Js', 'LESS']
+    buildAt: ['Vue Js', 'LESS', 'Vuex']
   },
   {
     title: 'Frontend Engineer Intern',

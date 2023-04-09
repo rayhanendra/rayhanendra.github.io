@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28">
+  <div class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28 tw-mt-96 sm:tw-mt-0 tw-px-4">
     <BaseTitle title="Projects" number="03" />
     <div
       class="tw-flex tw-justify-center tw-gap-4 tw-border tw-border-gray-400 tw-border-opacity-10 tw-text-white tw-font-bold tw-text-lg tw-w-full tw-overflow-x-auto"
@@ -8,10 +8,10 @@
         v-for="(tab, index) in tabs"
         :key="index"
         @click="activeTab = tab"
-        class="tw-px-4 tw-py-2 tw-cursor-pointer tw-transition tw-duration-300 tw-ease-in-out tw-transform hover:tw-text-yellow-400 tw-min-w-fit tw-w-24 tw-text-center hover:tw-bg-yellow-400 hover:tw-bg-opacity-10"
+        class="tw-px-6 tw-py-2 tw-cursor-pointer tw-transition tw-duration-300 tw-ease-in-out tw-transform hover:tw-text-yellow-400 tw-min-w-fit tw-w-24 tw-text-center hover:tw-bg-yellow-400 hover:tw-bg-opacity-10"
         :class="
           activeTab === tab
-            ? 'tw-text-yellow-400 tw-border-b tw-border-yellow-400'
+            ? 'tw-text-yellow-400 tw-border-t sm:tw-border-t-0 sm:tw-border-b tw-border-yellow-400'
             : 'tw-text-white'
         "
       >

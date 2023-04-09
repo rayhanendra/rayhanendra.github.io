@@ -1,7 +1,7 @@
 <template>
-  <div class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28">
+  <div class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28 tw-px-4">
     <BaseTitle number="01" title="About Me" />
-    <p class="tw-pb-12">
+    <p class="tw-pb-12 tw-text-justify">
       My name is Rayhanendra, and I am a Frontend Engineer who strives for excellence in my work.
       <br />
       <br />
@@ -15,7 +15,7 @@
       <br />
       For me, it's not just about implementing ideas but also about generating them.
     </p>
-    <div class="tw-flex tw-justify-between tw-w-full">
+    <div class="tw-flex tw-justify-between tw-gap-4 tw-w-full tw-overflow-auto">
       <div class="tw-font-bold tw-text-yellow-400">Skills</div>
       <div v-for="(skill, index) in skills" :key="index" class="tw-flex tw-flex-col tw-gap-2">
         <div class="tw-font-bold tw-text-white">{{ skill.title }}</div>

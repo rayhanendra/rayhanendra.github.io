@@ -1,14 +1,14 @@
 <template>
-  <div class="tw-container tw-mx-auto tw-w-full tw-py-28">
+  <div class="tw-container tw-mx-auto tw-py-28 tw-pt-12 sm:tw-pt-28 tw-px-4">
     <BaseTitle title="Archive" />
     <table class="tw-w-full tw-table-auto">
       <thead>
         <tr>
           <th class="tw-font-semibold">Year</th>
           <th class="tw-font-semibold">Title</th>
-          <th class="tw-font-semibold">Type</th>
-          <th class="tw-font-semibold">Made At</th>
-          <th class="tw-font-semibold">Build With</th>
+          <th class="tw-font-semibold tw-hidden sm:tw-table-cell">Type</th>
+          <th class="tw-font-semibold tw-hidden sm:tw-table-cell">Made At</th>
+          <th class="tw-font-semibold tw-hidden sm:tw-table-cell">Build With</th>
           <th class="tw-font-semibold">Link</th>
         </tr>
       </thead>
@@ -20,9 +20,9 @@
         >
           <td class="tw-font-mono tw-text-yellow-400">{{ item.year }}</td>
           <td class="tw-font-semibold">{{ item.title }}</td>
-          <td class="tw-uppercase">{{ item.type }}</td>
-          <td>{{ item.madeAt }}</td>
-          <td>
+          <td class="tw-uppercase tw-hidden sm:tw-table-cell">{{ item.type }}</td>
+          <td class="tw-hidden sm:tw-table-cell">{{ item.madeAt }}</td>
+          <td class="tw-hidden sm:tw-table-cell">
             <span
               v-for="(tech, index) in item.buildWith"
               :key="index"
