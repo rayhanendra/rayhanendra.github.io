@@ -63,10 +63,10 @@ const tools = ref([
   'NextJs',
   'NuxtJs',
   'MaterialUI',
-  'Vuetify',
   'TailwindCSS',
-  'Storybook',
-  'GSAP'
+  'GSAP',
+  'Storybook'
+  // 'Vuetify'
 ])
 
 onMounted(() => {

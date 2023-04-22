@@ -1,5 +1,6 @@
 <template>
   <div>
+    <TheRocket />
     <TheHero />
     <TheAbout />
     <TheWork />
@@ -13,6 +14,7 @@ import TheAbout from '@/components/TheAbout.vue'
 import TheArchive from '@/components/TheArchive.vue'
 import TheHero from '@/components/TheHero.vue'
 import TheProject from '@/components/TheProject.vue'
+import TheRocket from '@/components/TheRocket.vue'
 import TheWork from '@/components/TheWork.vue'
 </script>
 

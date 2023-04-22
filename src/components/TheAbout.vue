@@ -17,7 +17,11 @@
     </p>
     <div class="tw-flex tw-justify-between tw-gap-4 tw-w-full tw-overflow-auto">
       <div class="tw-font-bold tw-text-yellow-400">Skills</div>
-      <div v-for="(skill, index) in skills" :key="index" class="tw-flex tw-flex-col tw-gap-2">
+      <div
+        v-for="(skill, index) in skills"
+        :key="index"
+        class="tw-flex tw-flex-col tw-gap-2 tw-pb-4 sm:tw-pb-0"
+      >
         <div class="tw-font-bold tw-text-white">{{ skill.title }}</div>
         <div class="tw-flex tw-flex-col tw-font-mono tw-gap-1">
           <div v-for="(data, index) in skill.data" :key="index">
