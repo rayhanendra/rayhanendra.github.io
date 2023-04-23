@@ -4,7 +4,7 @@ Made using Vue 3, Vite, and Tailwind CSS.
 
 ## Features
 
-- Vue 3
+- Vue 3 Script Setup Syntax (with TypeScript) and Composition API
 - Vite
 - Tailwind CSS
 - TypeScript
