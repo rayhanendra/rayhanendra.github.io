@@ -2,7 +2,7 @@
   <div class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28 tw-mt-96 sm:tw-mt-0 tw-px-4">
     <BaseTitle title="Projects" number="03" />
     <div
-      class="tw-flex tw-justify-center tw-gap-4 tw-border tw-border-gray-400 tw-border-opacity-10 tw-text-white tw-font-bold tw-text-lg tw-w-full tw-overflow-x-auto"
+      class="tw-flex tw-justify-between tw-gap-4 tw-border tw-border-gray-400 tw-border-opacity-10 tw-text-white tw-font-bold tw-text-lg tw-w-full tw-overflow-x-auto"
     >
       <div
         v-for="(tab, index) in tabs"
@@ -86,12 +86,20 @@ const projectDialogRef = ref<InstanceType<typeof ProjectDialog>>()
 const projectData = ref(data)
 
 const filteredData = computed(() => {
+  projectData.value.filter((item) => item.image !== '')
+
   if (activeTab.value === 'All') {
     return projectData.value
   } else {
     return projectData.value.filter((item) => item.type === activeTab.value.toLowerCase())
   }
 })
+
+const hideNoImage = () => {
+  projectData.value = projectData.value.filter((item) => item.image !== '')
+}
+
+hideNoImage()
 
 const openDialog = (item: any) => {
   projectItem.value = item
