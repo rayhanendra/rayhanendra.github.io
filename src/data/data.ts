@@ -33,7 +33,7 @@ export const data: IProject[] = [
   {
     id: '1',
     type: 'ui/ux',
-    year: '2020',
+    year: '2020-07',
     title: 'Obuce',
     subtitle: 'Obuce - Obese Reducing App',
     image: obuce,
@@ -41,7 +41,7 @@ export const data: IProject[] = [
     buildWith: ['Figma'],
     link: 'https://www.figma.com/file/mMKMx6uGYs7KhKrbUkxqoL/Mamen-Today?node-id=0%3A1&t=mXHmxL16ycwtspn4-1',
     github: '',
-    description: [
+    descriptions: [
       'OBUCE - An application that could automatically determine the best diet to help the obese to do a diet based on their body needs such as calories and nutrition. The users will get their very own recommended meals and may differ from every other user. The user can cook their meal with the provided recipe or order the meal then it will be delivered in no time.',
       'This project was created for a UX Research competition with “well-being” as the main topic. It was created by me and both of my friends, Ali and Ojan. I and Ali participated as the UX Designer and Ojan as the UX Researcher. The research of this project was carried out by interviewing a few friends from our group and was conducted online due to the pandemic.',
       'First, we did a brainstorm to zoom out of the given topic. It was done to make it easier to determine the discussion for ideation. And we define food and health as our living space. Then we perform a problem search from the linkup space that we have specified. And it was found that many obese people are still confused about having suitable and optimal diet. After that, we started doing research and also doing interviews. In the next stage, I did a medium-fidelity design to facilitate the following design process. And then I continued the hi-fi design with my friends.',
@@ -69,7 +69,7 @@ export const data: IProject[] = [
   {
     id: '2',
     type: 'web',
-    year: '2020',
+    year: '2020-01',
     title: 'Dramagon',
     subtitle: 'Dramagon - Dramaga Online Forum',
     image: dramagon,
@@ -77,7 +77,7 @@ export const data: IProject[] = [
     github: 'https://github.com/rayhanendra/Dramagon',
     madeAt: 'University Project',
     buildWith: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
-    description: [
+    descriptions: [
       'Dramagon is an online forum for the dramaga people to advertise their business and for the newcomers like the new students to get to know better to the city. The user also could read the latest information about Dramaga city.',
       'This project was created because of the lack of media to promote business and information around dramaga. And people often get confused about the latest event happened in Dramaga city.',
       'This project was created for a software engineering task from the collage that asked the students to build a software whether it’s web-based or mobile-based. The project was conducted by me and both of my colleges, Luthfi and Ikhsan. In the team, I worked as the front-end developer and UI designer. Luthfi worked as the full-stack developer and Ikhsan as the back-end developer.',
@@ -106,7 +106,7 @@ export const data: IProject[] = [
   {
     id: '3',
     type: 'design',
-    year: '2020',
+    year: '2020-03',
     title: 'BKKBN Logo Concept',
     subtitle: 'BKKBN Logo Concept',
     image: bkkbn,
@@ -114,7 +114,7 @@ export const data: IProject[] = [
     buildWith: ['Adobe Illustrator'],
     link: '',
     github: '',
-    description: [
+    descriptions: [
       'A BKKBN logo that gives a warm and supporting atmosphere for the BKKBN and also provides the youth and millennial feels.',
       'This logo was created when the BKKBN started a contest to recreate their current logo to be more Millenials and youth-oriented.',
       "In general, the meaning of the logo is about youth. First, it looks like an energetic person, it's also a pen that writes. It means that the youth needs to prepare and get ready for the future. And the green means to support.",
@@ -134,7 +134,7 @@ export const data: IProject[] = [
   {
     id: '4',
     type: 'web',
-    year: '2020',
+    year: '2020-12',
     title: 'Sahabat Tutor',
     subtitle: 'Sahabat Tutor - Admin Management Website ',
     image: tutor,
@@ -142,7 +142,7 @@ export const data: IProject[] = [
     buildWith: ['NextJs', 'Redux Toolkit', 'MaterialUI', 'ExpressJs', 'MongoDB'],
     link: '',
     github: '',
-    description: [
+    descriptions: [
       'Sahabat Tutor is a mobile app providing college students to book their tutors for the lectures.',
       'But I worked for the development of the admin management website.'
     ],
@@ -156,7 +156,7 @@ export const data: IProject[] = [
   {
     id: '5',
     type: 'web',
-    year: '2021',
+    year: '2021-01',
     title: 'IPB Internship Management System',
     subtitle: 'IPB Internship Management System - MBKM',
     image: cda,
@@ -164,7 +164,7 @@ export const data: IProject[] = [
     buildWith: ['NextJs', 'MaterialUI', 'ExpressJs', 'MongoDB'],
     link: '',
     github: '',
-    description: [
+    descriptions: [
       'The website provides IPB students to manage their internship activities and to communicate with their supervisors.',
       'This project is considered huge for me with almost 6 months of development. And this project consisting 3 type of roles: admin, student and supervisor. It has around 29 pages with multiple popup dialog in most of each pages. '
     ],
@@ -194,7 +194,7 @@ export const data: IProject[] = [
   {
     id: '6',
     type: 'game',
-    year: '2020',
+    year: '2020-10',
     title: 'Boongeon',
     subtitle: 'Boongeon - Unity 3D PC Game',
     image: boongeon3,
@@ -202,7 +202,7 @@ export const data: IProject[] = [
     buildWith: ['Unity', 'Blender'],
     link: '',
     github: 'https://github.com/rayhanendra/Boongeon-Grafkom',
-    description: [
+    descriptions: [
       'Boongeon Is a 3D PC game. The task as a player is to defeat all enemies for getting  the elemental books used to eliminate the last boss.',
       'I took the role as a game developer, visual effects developer, and model creator. This project was built using Unity and Blender.'
     ],
@@ -224,5 +224,58 @@ export const data: IProject[] = [
         desc: 'Final Release'
       }
     ]
+  },
+  {
+    id: '7',
+    type: 'web',
+    year: '2022-11',
+    title: 'Portal Plus Profile - Webview',
+    subtitle: 'Portal Plus Profile - Webview for Flutter',
+    image: '',
+    madeAt: 'Enb Mobile Care',
+    buildWith: ['NextJs', 'MaterialUI', 'PHP', 'MySQL'],
+    link: '',
+    github: '',
+    descriptions: [
+      'Portal Plus Profile is a webview for the mobile app. It provides the user to manage their profile and to communicate with the admin.'
+    ],
+    process: []
+  },
+  {
+    id: '8',
+    type: 'web',
+    year: '2023-01',
+    title: 'TradeInPlus Marketplace',
+    subtitle: 'TradeInPlus Marketplace - E-Commerce Website for electronics',
+    image: '',
+    madeAt: 'Enb Mobile Care',
+    buildWith: ['Vue3', 'TailwindCSS', 'Storybook', 'Cypress', 'PHP', 'MySQL'],
+    link: 'https://tradeinplus.co.id/',
+    github: '',
+    descriptions: [
+      'TradeInPlus Marketplace is an e-commerce website for electronics.',
+      'It provides 3 main features: Want to Buy, Want to Sell, and EcoExchange.',
+      'Want to Buy is a feature to buy mobile phones by posting the phones that the user want',
+      'Want to Sell is a feature to sell mobile phones by posting the phones that the user want to sell',
+      'EcoExchange is a feature to buy used electronics from the EcoExchange online store and physical store.'
+    ],
+    process: []
+  },
+  {
+    id: '9',
+    type: 'web',
+    year: '2023-03',
+    title: 'Samsung Service Plus',
+    subtitle: 'Samsung Service Plus - Mobile first website',
+    image: '',
+    madeAt: 'Enb Mobile Care',
+    buildWith: ['NextJs', 'MaterialUI', 'PHP', 'MySQL'],
+    link: 'samsungserviceplus.id',
+    github: '',
+    descriptions: [
+      'Samsung Service Plus is a mobile first website for Samsung Service Plus.',
+      `It's main feature is to trade in an old mobile phone and get a discount voucher to buy a new Samsung mobile phone.`
+    ],
+    process: []
   }
 ]

@@ -9,7 +9,7 @@ interface IProject {
   buildWith: string[]
   link: string
   github: string
-  description: string[]
+  descriptions: string[]
   process: {
     image: string
     desc: string
