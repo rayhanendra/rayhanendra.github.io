@@ -8,7 +8,11 @@
           : 'tw-translate-y-0 tw-opacity-100 tw-pointer-events-auto tw-shadow-lg'
       "
     >
-      <img src="../assets/icons/rn-logo.svg" alt="logo" class="tw-w-12" />
+      <router-link to="/">
+        <button>
+          <img src="../assets/icons/rn-logo.svg" alt="logo" class="tw-w-12" />
+        </button>
+      </router-link>
       <div class="tw-flex tw-items-center">
         <div class="tw-hidden sm:tw-flex tw-items-center tw-gap-8">
           <div class="tw-flex tw-gap-6">
@@ -72,7 +76,7 @@
       </div>
     </div>
     <slot />
-    <footer>footer</footer>
+    <!-- <footer></footer> -->
   </div>
 </template>
 
