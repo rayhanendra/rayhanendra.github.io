@@ -13,11 +13,13 @@
           Striving for excellence through implementing best practices in all aspects.
         </div>
 
-        <button
-          class="tw-mt-10 tw-p-4 tw-py-[12px] tw-px-8 tw-border tw-border-yellow-300 tw-text-yellow-300 tw-text-base tw-font-semibold tw-transition tw-duration-300 tw-ease-in-out tw-transform hover:tw-text-[#000000] hover:tw-bg-yellow-300 hover:tw-scale-105"
-        >
-          Check Resume!
-        </button>
+        <a :href="resume" target="_blank" rel="noopener noreferrer">
+          <button
+            class="tw-mt-10 tw-p-4 tw-py-[12px] tw-px-8 tw-border tw-border-yellow-300 tw-text-yellow-300 tw-text-base tw-font-semibold tw-transition tw-duration-300 tw-ease-in-out tw-transform hover:tw-text-[#000000] hover:tw-bg-yellow-300 hover:tw-scale-105"
+          >
+            Check Resume!
+          </button>
+        </a>
       </div>
       <div class="tw-col-span-12 sm:tw-col-span-6 tw-flex sm:tw-justify-end tw-px-4">
         <div class="tw-relative tw-w-96 tw-h-fit">
@@ -50,6 +52,8 @@
 import { onMounted, ref } from 'vue'
 import { gsap } from 'gsap'
 
+const resume = import.meta.env.VITE_RESUME_URL
+
 const textLoopRef = ref(null) as any
 
 const tools = ref([
@@ -72,7 +76,6 @@ const tools = ref([
 onMounted(() => {
   const textLoop = gsap.timeline({ repeat: -1 })
   const textElements = Array.from(textLoopRef.value.children)
-  console.log('ini text elements', textElements)
 
   const duration = 12
   textElements.forEach((el, index) => {

@@ -1,5 +1,8 @@
 <template>
-  <div class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28 tw-mt-96 sm:tw-mt-0 tw-px-4">
+  <section
+    id="projects"
+    class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28 tw-mt-96 sm:tw-mt-0 tw-px-4"
+  >
     <BaseTitle title="Projects" number="03" />
     <div
       class="tw-flex tw-justify-between tw-gap-4 tw-border tw-border-gray-400 tw-border-opacity-10 tw-text-white tw-font-bold tw-text-lg tw-w-full tw-overflow-x-auto"
@@ -52,7 +55,7 @@
         </button>
       </div>
     </div>
-  </div>
+  </section>
   <ProjectDialog ref="projectDialogRef" :project="projectItem" />
 </template>
 

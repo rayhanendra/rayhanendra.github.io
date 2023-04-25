@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28 tw-px-4">
+  <section id="work" class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28 tw-px-4">
     <BaseTitle number="02" title="Where I've Worked" />
     <div class="tw-flex tw-flex-col sm:tw-flex-row tw-gap-12 tw-h-[364px]">
       <div class="tw-flex tw-flex-row sm:tw-flex-col tw-w-full sm:tw-w-1/3 tw-h-fit">
@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

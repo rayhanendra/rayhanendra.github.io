@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-container tw-mx-auto tw-py-28 tw-pt-12 sm:tw-pt-28 tw-px-4">
+  <div class="tw-container tw-mx-auto tw-py-28 tw-pt-28 tw-px-4">
     <BaseTitle title="Archive" />
     <table class="tw-w-full tw-table-auto">
       <thead>
@@ -16,7 +16,7 @@
         <tr
           v-for="item in archives"
           :key="item.id"
-          class="tw-text-sm hover:tw-bg-yellow-400 hover:tw-bg-opacity-5 tw-transition tw-duration-300 tw-ease-in-out"
+          class="tw-text-sm hover:tw-bg-yellow-400 hover:tw-bg-opacity-5 tw-transition tw-duration-300 tw-ease-in-out tw-cursor-pointer"
           @click="handleShowDropdown(item.id)"
         >
           <td class="tw-font-mono tw-text-yellow-400">{{ new Date(item.year).getFullYear() }}</td>

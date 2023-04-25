@@ -13,7 +13,16 @@ const router = createRouter({
       name: 'archive',
       component: () => import('@/views/ArchiveView.vue')
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth'
+      }
+    }
+    return { top: 0, behavior: 'smooth' }
+  }
 })
 
 export default router

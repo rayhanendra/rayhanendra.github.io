@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28 tw-px-4">
+  <section id="about" class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28 tw-px-4">
     <BaseTitle number="01" title="About Me" />
     <p class="tw-pb-12 tw-text-justify">
       My name is Rayhanendra, and I am a Frontend Engineer who strives for excellence in my work.
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
