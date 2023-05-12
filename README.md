@@ -22,4 +22,4 @@ Made using Vue 3, Vite, Tailwind CSS, and GSAP.
 ## Deployment
 
 Deployed using github pages<br/>
-Will migrate soon to VM or hosting after finishing the CMS using Prisma
+Will migrate soon to VM or hosting after finishing the CMS using Strapi
