@@ -33,7 +33,7 @@
             />
           </div>
           <div
-            v-for="(paragraph, index) in project.description"
+            v-for="(paragraph, index) in project.descriptions"
             :key="index"
             class="tw-text-gray-400 tw-text-md tw-py-2"
           >
@@ -61,11 +61,11 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router'
 import BaseDialog from './BaseDialog.vue'
 
 defineProps<{
-  project: any
+  project: IProject
 }>()
 
 const router = useRouter()

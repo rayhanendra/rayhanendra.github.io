@@ -56,7 +56,7 @@
       </div>
     </div>
   </section>
-  <ProjectDialog ref="projectDialogRef" :project="projectItem" />
+  <ProjectDialog v-if="projectItem" ref="projectDialogRef" :project="projectItem" />
 </template>
 
 <script setup lang="ts">
@@ -64,27 +64,11 @@ import { ref, computed } from 'vue'
 import BaseTitle from './BaseTitle.vue'
 import ProjectDialog from './ProjectDialog.vue'
 import { data } from '@/data/data'
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
 
 const tabs = ref(['All', 'Web', 'UI/UX', 'Design', 'Game', 'Publication'])
 const activeTab = ref('All')
 const hovered = ref(0)
-const projectItem = ref<any>({
-  year: '',
-  title: '',
-  subtitle: '',
-  image: '',
-  description: [],
-  process: [
-    {
-      image: '',
-      desc: ''
-    }
-  ],
-  type: ''
-})
+const projectItem = ref<IProject | null>(null)
 const projectDialogRef = ref<InstanceType<typeof ProjectDialog>>()
 const projectData = ref(data)
 
@@ -108,11 +92,12 @@ const openDialog = (item: any) => {
   projectItem.value = item
   projectDialogRef.value?.openDialog()
 
-  router.push({
-    query: {
-      id: item.id
-    }
-  })
+  // Note: to be implemented later
+  // router.push({
+  //   query: {
+  //     id: item.id
+  //   }
+  // })
 }
 </script>
 
