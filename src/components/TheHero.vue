@@ -23,7 +23,7 @@
       </div>
       <div class="tw-col-span-12 sm:tw-col-span-6 tw-flex sm:tw-justify-end tw-px-4">
         <div class="tw-relative tw-w-96 tw-h-fit">
-          <img src="@/assets/images/hero.png" alt="hero" />
+          <img src="@/assets/images/hero.webp" alt="hero" />
           <div
             class="tw-absolute -tw-top-4 -tw-left-4 tw-border tw-border-yellow-300 tw-w-full tw-h-full"
           ></div>
