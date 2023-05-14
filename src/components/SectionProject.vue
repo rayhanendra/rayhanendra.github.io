@@ -56,20 +56,20 @@
       </div>
     </div>
   </section>
-  <ProjectDialog v-if="projectItem" ref="projectDialogRef" :project="projectItem" />
+  <DialogProject v-if="projectItem" ref="dialogProjectRef" :project="projectItem" />
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import BaseTitle from './BaseTitle.vue'
-import ProjectDialog from './ProjectDialog.vue'
+import BaseTitle from '@/components/BaseTitle.vue'
+import DialogProject from '@/components/DialogProject.vue'
 import { data } from '@/data/data'
 
 const tabs = ref(['All', 'Web', 'UI/UX', 'Design', 'Game', 'Publication'])
 const activeTab = ref('All')
 const hovered = ref(0)
 const projectItem = ref<IProject | null>(null)
-const projectDialogRef = ref<InstanceType<typeof ProjectDialog>>()
+const dialogProjectRef = ref<InstanceType<typeof DialogProject>>()
 const projectData = ref(data)
 
 const filteredData = computed(() => {
@@ -90,7 +90,7 @@ hideNoImage()
 
 const openDialog = (item: any) => {
   projectItem.value = item
-  projectDialogRef.value?.openDialog()
+  dialogProjectRef.value?.openDialog()
 
   // Note: to be implemented later
   // router.push({

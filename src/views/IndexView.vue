@@ -1,21 +1,21 @@
 <template>
   <div>
-    <TheRocket />
-    <TheHero />
-    <TheAbout />
-    <TheWork />
-    <TheProject />
-    <TheArchive />
+    <SectionRocket />
+    <SectionHero />
+    <SectionAbout />
+    <SectionWork />
+    <SectionProject />
+    <SectionArchive />
   </div>
 </template>
 
 <script setup lang="ts">
-import TheAbout from '@/components/TheAbout.vue'
-import TheArchive from '@/components/TheArchive.vue'
-import TheHero from '@/components/TheHero.vue'
-import TheProject from '@/components/TheProject.vue'
-import TheRocket from '@/components/TheRocket.vue'
-import TheWork from '@/components/TheWork.vue'
+import SectionAbout from '@/components/SectionAbout.vue'
+import SectionArchive from '@/components/SectionArchive.vue'
+import SectionHero from '@/components/SectionHero.vue'
+import SectionProject from '@/components/SectionProject.vue'
+import SectionRocket from '@/components/SectionRocket.vue'
+import SectionWork from '@/components/SectionWork.vue'
 </script>
 
 <style scoped></style>

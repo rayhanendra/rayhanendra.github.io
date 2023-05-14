@@ -60,7 +60,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import BaseTitle from './BaseTitle.vue'
+import BaseTitle from '@/components/BaseTitle.vue'
 
 const activeIndex = ref(0)
 
