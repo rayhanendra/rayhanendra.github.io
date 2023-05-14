@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-container tw-mx-auto tw-py-28 tw-pt-12 sm:tw-pt-28 tw-px-4">
+  <div class="tw-container tw-max-w-screen-lg tw-mx-auto tw-py-28 tw-pt-12 sm:tw-pt-28 tw-px-4">
     <div class="tw-grid tw-grid-cols-12 tw-gap-4 tw-space-y-10 sm:tw-space-y-0">
       <div class="tw-col-span-12 sm:tw-col-span-6">
         <div class="tw-text-2xl">
