@@ -103,6 +103,10 @@ const navigations = ref<INavigation[]>([
   {
     title: 'Projects',
     link: '/#projects'
+  },
+  {
+    title: 'Archive',
+    link: '/#archive'
   }
 ])
 

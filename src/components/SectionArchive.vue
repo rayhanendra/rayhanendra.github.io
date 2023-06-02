@@ -1,5 +1,8 @@
 <template>
-  <div class="tw-container tw-max-w-screen-lg tw-mx-auto tw-py-28 tw-pt-28 tw-px-4">
+  <section
+    id="archive"
+    class="tw-container tw-max-w-screen-lg tw-mx-auto tw-py-28 tw-pt-28 tw-px-4"
+  >
     <BaseTitle title="Archive" />
     <table class="tw-w-full tw-table-auto">
       <thead>
@@ -78,7 +81,7 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </section>
   <!-- Note: use this if want to create the archive page -->
   <!-- <div class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28">
     <div class="tw-text-center">
