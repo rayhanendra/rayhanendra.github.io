@@ -22,11 +22,9 @@
       >, and
       <a href="https://v3.vuejs.org" target="_blank" rel="noopener noreferrer">
         <img
-          src="
-              https://vuejs.org/logo.svg
-            "
+          src="https://docs.vuejs.id//images/logo.png"
           alt="Vue"
-          class="tw-inline-block tw-w-4 tw-h-4 tw-mb-0.5 tw-mr-1"
+          class="tw-inline-block tw-w-4 tw-mb-0.5 tw-mr-1"
         />
         Vue 3</a
       >
