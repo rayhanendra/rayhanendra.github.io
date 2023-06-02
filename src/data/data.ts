@@ -33,7 +33,7 @@ export const data: IProject[] = [
   {
     id: Math.random().toString(36).substr(2, 9),
     type: 'ui/ux',
-    year: '2020-7-1',
+    year: '2020/7/1',
     title: 'Obese Reducing App',
     subtitle: 'UX Research Competition',
     image: obuce,
@@ -69,7 +69,7 @@ export const data: IProject[] = [
   {
     id: Math.random().toString(36).substr(2, 9),
     type: 'web',
-    year: '2020-1-1',
+    year: '2020/1/1',
     title: 'Dramagon',
     subtitle: 'Dramaga Online Forum',
     image: dramagon,
@@ -106,7 +106,7 @@ export const data: IProject[] = [
   {
     id: Math.random().toString(36).substr(2, 9),
     type: 'design',
-    year: '2020-3-1',
+    year: '2020/3/1',
     title: 'BKKBN Logo Concept',
     subtitle: 'Logo Concept',
     image: bkkbn,
@@ -134,7 +134,7 @@ export const data: IProject[] = [
   {
     id: Math.random().toString(36).substr(2, 9),
     type: 'web',
-    year: '2020-12',
+    year: '2020/12/1',
     title: 'Sahabat Tutor',
     subtitle: 'Admin Management Website',
     image: tutor,
@@ -156,7 +156,7 @@ export const data: IProject[] = [
   {
     id: Math.random().toString(36).substr(2, 9),
     type: 'web',
-    year: '2021-01',
+    year: '2021/1/1',
     title: 'IPB Internship Management System',
     subtitle: 'Multiple Role System',
     image: cda,
@@ -194,7 +194,7 @@ export const data: IProject[] = [
   {
     id: Math.random().toString(36).substr(2, 9),
     type: 'game',
-    year: '2020-10',
+    year: '2020/8/1',
     title: 'Boongeon Game',
     subtitle: 'Unity 3D PC Game',
     image: boongeon3,
@@ -227,7 +227,7 @@ export const data: IProject[] = [
   },
   {
     id: Math.random().toString(36).substr(2, 9),
-    year: '2022-9-19',
+    year: '2022/9/19',
     title: 'NikahSaja Admin',
     subtitle: 'Admin Website',
     image: '',
@@ -249,7 +249,7 @@ export const data: IProject[] = [
   },
   {
     id: Math.random().toString(36).substr(2, 9),
-    year: '2022-10-6',
+    year: '2022/10/6',
     title: 'Wowfone Landing Page',
     subtitle: 'Landing Page',
     image: '',
@@ -270,7 +270,7 @@ export const data: IProject[] = [
   },
   {
     id: Math.random().toString(36).substr(2, 9),
-    year: '2022-9-23',
+    year: '2022/9/23',
     title: 'NikahSaja Landing Page',
     subtitle: 'Landing Page',
     image: '',
@@ -289,7 +289,7 @@ export const data: IProject[] = [
   },
   {
     id: Math.random().toString(36).substr(2, 9),
-    year: '2022-9-27',
+    year: '2022/9/27',
     title: 'ENB Mobile Care',
     subtitle: 'Company Profile',
     image: '',
@@ -310,7 +310,7 @@ export const data: IProject[] = [
   },
   {
     id: Math.random().toString(36).substr(2, 9),
-    year: '2022-11-1',
+    year: '2022/11/1',
     title: 'Portal Plus Profile - Webview',
     subtitle: 'Webview for mobile app',
     image: '',
@@ -331,7 +331,7 @@ export const data: IProject[] = [
   },
   {
     id: Math.random().toString(36).substr(2, 9),
-    year: '2023-1-1',
+    year: '2023/1/1',
     title: 'Trade In Plus Marketplace',
     subtitle: 'Responsive E-Commerce Website for Electronics',
     image: '',
@@ -356,7 +356,7 @@ export const data: IProject[] = [
   },
   {
     id: Math.random().toString(36).substr(2, 9),
-    year: '2023-1-27',
+    year: '2023/1/27',
     title: 'Samsung Trade-In System Store',
     subtitle: 'Mobile-first website with Samsung UI',
     image: '',
@@ -378,7 +378,7 @@ export const data: IProject[] = [
   },
   {
     id: Math.random().toString(36).substr(2, 9),
-    year: '2023-3-13',
+    year: '2023/3/13',
     title: 'Samsung Trade-In System User',
     subtitle: 'Mobile-first website with Samsung UI',
     image: '',
