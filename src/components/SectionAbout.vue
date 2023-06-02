@@ -55,6 +55,10 @@ const skills = ref([
     data: ['Git', 'VSCode', 'Postman', 'DevTools']
   },
   {
+    title: 'Testing',
+    data: ['Jest', 'React Testing Library', 'Cypress']
+  },
+  {
     title: 'Design',
     data: ['Figma', 'Wireframing', 'Interface Design', 'Prototyping']
   }

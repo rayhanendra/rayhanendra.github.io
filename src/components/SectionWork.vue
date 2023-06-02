@@ -77,16 +77,20 @@ const data = ref([
       'I work in close collaboration with technical lead, project team, and CEO directly to achieve project objectives'
     ],
     buildAt: [
-      'Vue3',
-      'React JS',
-      'Next Js',
-      'Webview',
+      'TypeScript',
+      'ReactJs',
+      'Vue 3',
+      'NextJs',
+      'NuxtJs',
+      'Vite',
+      'Zustand',
+      'Vuex',
+      'Pinia',
       'Tailwind CSS',
       'Material UI',
       'Storybook',
-      'Vuex',
-      'Pinia',
-      'Vite'
+      'Webview',
+      'Cypress'
     ]
   },
   {

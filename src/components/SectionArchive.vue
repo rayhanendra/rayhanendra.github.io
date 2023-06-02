@@ -106,13 +106,10 @@ const handleShowDropdown = (id: string) => {
 }
 
 const acend = (a: any, b: any) => {
-  if (a.year > b.year) {
-    return -1
-  }
-  if (a.year < b.year) {
-    return 1
-  }
-  return 0
+  const datePrev = Date.parse(a.year)
+  const dateNext = Date.parse(b.year)
+
+  return dateNext - datePrev
 }
 
 const archives = ref(data)

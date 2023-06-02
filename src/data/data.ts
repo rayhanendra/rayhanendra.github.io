@@ -31,11 +31,11 @@ import boongeon3 from '@/assets/images/projects/boongeon/boongeon-3.webp'
 
 export const data: IProject[] = [
   {
-    id: '1',
+    id: Math.random().toString(36).substr(2, 9),
     type: 'ui/ux',
-    year: '2020-07',
-    title: 'Obuce',
-    subtitle: 'Obuce - Obese Reducing App',
+    year: '2020-7-1',
+    title: 'Obese Reducing App',
+    subtitle: 'UX Research Competition',
     image: obuce,
     madeAt: 'UX Research Competition',
     buildWith: ['Figma'],
@@ -67,11 +67,11 @@ export const data: IProject[] = [
     ]
   },
   {
-    id: '2',
+    id: Math.random().toString(36).substr(2, 9),
     type: 'web',
-    year: '2020-01',
+    year: '2020-1-1',
     title: 'Dramagon',
-    subtitle: 'Dramagon - Dramaga Online Forum',
+    subtitle: 'Dramaga Online Forum',
     image: dramagon,
     link: '',
     github: 'https://github.com/rayhanendra/Dramagon',
@@ -104,11 +104,11 @@ export const data: IProject[] = [
     ]
   },
   {
-    id: '3',
+    id: Math.random().toString(36).substr(2, 9),
     type: 'design',
-    year: '2020-03',
+    year: '2020-3-1',
     title: 'BKKBN Logo Concept',
-    subtitle: 'BKKBN Logo Concept',
+    subtitle: 'Logo Concept',
     image: bkkbn,
     madeAt: 'Personal Project',
     buildWith: ['Adobe Illustrator'],
@@ -132,11 +132,11 @@ export const data: IProject[] = [
     ]
   },
   {
-    id: '4',
+    id: Math.random().toString(36).substr(2, 9),
     type: 'web',
     year: '2020-12',
     title: 'Sahabat Tutor',
-    subtitle: 'Sahabat Tutor - Admin Management Website ',
+    subtitle: 'Admin Management Website',
     image: tutor,
     madeAt: 'Codepanda',
     buildWith: ['NextJs', 'Redux Toolkit', 'MaterialUI', 'ExpressJs', 'MongoDB'],
@@ -144,7 +144,7 @@ export const data: IProject[] = [
     github: '',
     descriptions: [
       'Sahabat Tutor is a mobile app providing college students to book their tutors for the lectures.',
-      'But I worked for the development of the admin management website.'
+      'Developed the development of the admin management website.'
     ],
     process: [
       {
@@ -154,19 +154,19 @@ export const data: IProject[] = [
     ]
   },
   {
-    id: '5',
+    id: Math.random().toString(36).substr(2, 9),
     type: 'web',
     year: '2021-01',
     title: 'IPB Internship Management System',
-    subtitle: 'IPB Internship Management System - MBKM',
+    subtitle: 'Multiple Role System',
     image: cda,
     madeAt: 'Codepanda',
     buildWith: ['NextJs', 'MaterialUI', 'ExpressJs', 'MongoDB'],
     link: '',
     github: '',
     descriptions: [
-      'The website provides IPB students to manage their internship activities and to communicate with their supervisors.',
-      'This project is considered huge for me with almost 6 months of development. And this project consisting 3 type of roles: admin, student and supervisor. It has around 29 pages with multiple popup dialog in most of each pages. '
+      'The website allows IPB students to manage their internship activities and communicate with their supervisors.',
+      'This project was a huge undertaking for me, taking almost 6 months to develop. It consists of 3 types of roles: admin, student, and supervisor, with around 29 pages and multiple popup dialogs on most of them.'
     ],
     process: [
       {
@@ -192,11 +192,11 @@ export const data: IProject[] = [
     ]
   },
   {
-    id: '6',
+    id: Math.random().toString(36).substr(2, 9),
     type: 'game',
     year: '2020-10',
-    title: 'Boongeon',
-    subtitle: 'Boongeon - Unity 3D PC Game',
+    title: 'Boongeon Game',
+    subtitle: 'Unity 3D PC Game',
     image: boongeon3,
     madeAt: 'University Project',
     buildWith: ['Unity', 'Blender'],
@@ -226,56 +226,177 @@ export const data: IProject[] = [
     ]
   },
   {
-    id: '7',
-    type: 'web',
-    year: '2022-11',
-    title: 'Portal Plus Profile - Webview',
-    subtitle: 'Portal Plus Profile - Webview for Flutter',
+    id: Math.random().toString(36).substr(2, 9),
+    year: '2022-9-19',
+    title: 'NikahSaja Admin',
+    subtitle: 'Admin Website',
     image: '',
-    madeAt: 'Enb Mobile Care',
-    buildWith: ['NextJs', 'MaterialUI', 'PHP', 'MySQL'],
+    madeAt: 'ENB Mobile Care',
     link: '',
     github: '',
+    buildWith: ['VueJs', 'Vuex', 'Bootstrap', 'Vuexy Template'],
     descriptions: [
-      'Portal Plus Profile is a webview for the mobile app. It provides the user to manage their profile and to communicate with the admin.'
+      'Maintain admin dashboard for NikahSaja Mobile App',
+      'Implement web socket for notifications'
     ],
-    process: []
+    type: 'web',
+    process: [
+      {
+        image: '',
+        desc: ''
+      }
+    ]
   },
   {
-    id: '8',
-    type: 'web',
-    year: '2023-01',
-    title: 'TradeInPlus Marketplace',
-    subtitle: 'TradeInPlus Marketplace - E-Commerce Website for electronics',
+    id: Math.random().toString(36).substr(2, 9),
+    year: '2022-10-6',
+    title: 'Wowfone Landing Page',
+    subtitle: 'Landing Page',
     image: '',
-    madeAt: 'Enb Mobile Care',
-    buildWith: ['Vue3', 'TailwindCSS', 'Storybook', 'Cypress', 'PHP', 'MySQL'],
-    link: 'https://tradeinplus.co.id/',
+    madeAt: 'ENB Mobile Care',
+    link: 'https://wowfone.com/',
     github: '',
+    buildWith: ['Nuxt3', 'Vuetify', 'Aos', 'Swiper'],
+    descriptions: [
+      'This is the landing page of the Wowfone app, designed for people who want to earn money by selling mobile phones from the comfort of their own home.'
+    ],
+    type: 'web',
+    process: [
+      {
+        image: '',
+        desc: ''
+      }
+    ]
+  },
+  {
+    id: Math.random().toString(36).substr(2, 9),
+    year: '2022-9-23',
+    title: 'NikahSaja Landing Page',
+    subtitle: 'Landing Page',
+    image: '',
+    madeAt: 'ENB Mobile Care',
+    link: 'https://nikahsaja.id',
+    github: '',
+    buildWith: ['NextJs', 'Tailwind CSS'],
+    descriptions: ['Maintain the landing page of NikahSaja Mobile App'],
+    type: 'web',
+    process: [
+      {
+        image: '',
+        desc: ''
+      }
+    ]
+  },
+  {
+    id: Math.random().toString(36).substr(2, 9),
+    year: '2022-9-27',
+    title: 'ENB Mobile Care',
+    subtitle: 'Company Profile',
+    image: '',
+    madeAt: 'ENB Mobile Care',
+    link: 'https://www.enbmobilecare.co.id',
+    github: '',
+    buildWith: ['Typescript', 'NextJs', 'MaterialUI', 'Figma'],
+    descriptions: [
+      'The old company profile has been redesigned and remade with the latest technology.'
+    ],
+    type: 'web',
+    process: [
+      {
+        image: '',
+        desc: ''
+      }
+    ]
+  },
+  {
+    id: Math.random().toString(36).substr(2, 9),
+    year: '2022-11-1',
+    title: 'Portal Plus Profile - Webview',
+    subtitle: 'Webview for mobile app',
+    image: '',
+    madeAt: 'ENB Mobile Care',
+    link: '',
+    github: '',
+    buildWith: ['Typescript', 'NextJs', 'React Global State', 'MaterialUI'],
+    descriptions: [
+      'Portal Plus Profile is a webview for the mobile app. It allows users to manage their profile and communicate with the admin.'
+    ],
+    type: 'web',
+    process: [
+      {
+        image: '',
+        desc: ''
+      }
+    ]
+  },
+  {
+    id: Math.random().toString(36).substr(2, 9),
+    year: '2023-1-1',
+    title: 'Trade In Plus Marketplace',
+    subtitle: 'Responsive E-Commerce Website for Electronics',
+    image: '',
+    madeAt: 'ENB Mobile Care',
+    link: 'https://development.tradeinplus.co.id',
+    github: '',
+    buildWith: ['TypeScript', 'Vue3', 'Pinia', 'TailwindCSS', 'Storybook', 'Cypress', 'Figma'],
     descriptions: [
       'TradeInPlus Marketplace is an e-commerce website for electronics.',
-      'It provides 3 main features: Want to Buy, Want to Sell, and EcoExchange.',
-      'Want to Buy is a feature to buy mobile phones by posting the phones that the user want',
-      'Want to Sell is a feature to sell mobile phones by posting the phones that the user want to sell',
-      'EcoExchange is a feature to buy used electronics from the EcoExchange online store and physical store.'
+      'It provides three main features: Want to Buy, Want to Sell, and EcoExchange.',
+      'Want to Buy is a feature that allows users to purchase mobile phones by posting the phone models they want.',
+      'Want to Sell is a feature that allows users to sell mobile phones by posting the phone models they want to sell.',
+      'EcoExchange is a feature that allows users to purchase used electronics from the EcoExchange online and physical stores.'
     ],
-    process: []
+    type: 'web',
+    process: [
+      {
+        image: '',
+        desc: ''
+      }
+    ]
   },
   {
-    id: '9',
-    type: 'web',
-    year: '2023-03',
-    title: 'Samsung Service Plus',
-    subtitle: 'Samsung Service Plus - Mobile first website',
+    id: Math.random().toString(36).substr(2, 9),
+    year: '2023-1-27',
+    title: 'Samsung Trade-In System Store',
+    subtitle: 'Mobile-first website with Samsung UI',
     image: '',
-    madeAt: 'Enb Mobile Care',
-    buildWith: ['NextJs', 'MaterialUI', 'PHP', 'MySQL'],
-    link: 'samsungserviceplus.id',
+    madeAt: 'ENB Mobile Care',
+    link: '',
     github: '',
+    buildWith: ['TypeScript', 'NextJs', 'Zustand', 'MaterialUI', 'Cypress'],
     descriptions: [
-      'Samsung Service Plus is a mobile first website for Samsung Service Plus.',
-      `It's main feature is to trade in an old mobile phone and get a discount voucher to buy a new Samsung mobile phone.`
+      'Samsung Service Plus is a mobile-first website for Samsung customers.',
+      'Its main feature is to trade in an old mobile phone and receive a discount voucher for a new Samsung mobile phone.'
     ],
-    process: []
+    type: 'web',
+    process: [
+      {
+        image: '',
+        desc: ''
+      }
+    ]
+  },
+  {
+    id: Math.random().toString(36).substr(2, 9),
+    year: '2023-3-13',
+    title: 'Samsung Trade-In System User',
+    subtitle: 'Mobile-first website with Samsung UI',
+    image: '',
+    madeAt: 'ENB Mobile Care',
+    link: 'https://registrasi-tpss.tradeinplus.id/',
+    github: '',
+    buildWith: ['TypeScript', 'ReactJs', 'Vite', 'MaterialUI', 'Cypress'],
+    descriptions: [
+      'This website allows users to register their trade-ins.',
+      'Users can track the progress of their trade-in.',
+      "The UI is modeled after Samsung's official page."
+    ],
+    type: 'web',
+    process: [
+      {
+        image: '',
+        desc: ''
+      }
+    ]
   }
 ]
