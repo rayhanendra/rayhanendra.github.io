@@ -227,6 +227,31 @@ export const data: IProject[] = [
   },
   {
     id: Math.random().toString(36).substr(2, 9),
+    year: '2022/2/1',
+    title: 'Chili Distribution System - PWA',
+    subtitle: 'Progressive Web App System (University Thesis)',
+    image: '',
+    madeAt: 'University Project',
+    link: '',
+    github: 'https://github.com/rayhanendra/Dramagon',
+    buildWith: ['ReactJs', 'Redux Toolkit', 'Material UI'],
+    descriptions: [
+      'Led a 6-person team in developing a mobile-first Progressive Web Application (PWA) website for a distribution system, catering to various roles such as Petani, Pedagang, Dinas Pertanian, etc.',
+      'Took charge of leading the front-end, back-end, designer, and business team members',
+      'Built the website using the React S framework, ensuring optimal performance and responsiveness',
+      'Implemented JSON data retrieved from the backend into Material UI components, resulting in a visually appealing and user-friendly interface',
+      'Utilized Redux Toolkit as the chosen state management solution to efficiently manage and synchronize application state.'
+    ],
+    type: 'web',
+    process: [
+      {
+        image: '',
+        desc: ''
+      }
+    ]
+  },
+  {
+    id: Math.random().toString(36).substr(2, 9),
     year: '2022/9/19',
     title: 'NikahSaja Admin',
     subtitle: 'Admin Website',
