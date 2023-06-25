@@ -1,6 +1,6 @@
 <template>
   <div
-    class="tw-border-t tw-border-gray-700 tw-flex tw-flex-col tw-justify-center tw-items-center tw-p-2"
+    class="tw-border-t tw-border-gray-700 tw-flex tw-flex-col tw-justify-center tw-items-center tw-gap-2 tw-p-4 tw-mb-4"
   >
     <div class="tw-text-center">
       Built with
@@ -29,30 +29,29 @@
         Vue 3</a
       >
     </div>
-    <div class="tw-flex tw-flex-col tw-items-center">
-      <div>
-        Styled with
-        <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.svg.png"
-            alt="Tailwind CSS"
-            class="tw-inline-block tw-w-4 tw-mb-0.5 tw-mr-1"
-          />
-          Tailwind CSS
-        </a>
-      </div>
 
-      <div>
-        Animated with
-        <a href="https://greensock.com/gsap/" target="_blank" rel="noopener noreferrer">
-          <img
-            src="https://greensock.com/uploads/monthly_2020_03/tweenmax.png.cf27916e926fbb328ff214f66b4c8429.png"
-            alt="GSAP"
-            class="tw-inline-block tw-w-4 tw-mb-0.5 tw-mr-1"
-          />
-          GSAP
-        </a>
-      </div>
+    <div>
+      Styled with
+      <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.svg.png"
+          alt="Tailwind CSS"
+          class="tw-inline-block tw-w-4 tw-mb-0.5 tw-mr-1"
+        />
+        Tailwind CSS
+      </a>
+    </div>
+
+    <div>
+      Animated with
+      <a href="https://greensock.com/gsap/" target="_blank" rel="noopener noreferrer">
+        <img
+          src="https://greensock.com/uploads/monthly_2020_03/tweenmax.png.cf27916e926fbb328ff214f66b4c8429.png"
+          alt="GSAP"
+          class="tw-inline-block tw-w-4 tw-mb-0.5 tw-mr-1"
+        />
+        GSAP
+      </a>
     </div>
   </div>
 </template>

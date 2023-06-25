@@ -80,6 +80,7 @@
 
     <slot />
     <!-- <footer></footer> -->
+    <TheFooter />
   </div>
 </template>
 
@@ -88,6 +89,7 @@ import TheSquare from '@/components/TheSquare.vue'
 import TheGrid from '@/components/TheGrid.vue'
 import { MenuIcon, XIcon } from 'lucide-vue-next'
 import { onMounted, ref } from 'vue'
+import TheFooter from '@/components/TheFooter.vue'
 
 const resume = import.meta.env.VITE_RESUME_URL
 
