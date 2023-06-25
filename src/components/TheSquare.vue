@@ -1,5 +1,6 @@
 <template>
   <div class="square"></div>
+  <div class="hold">Hold</div>
 </template>
 
 <script setup lang="ts">
@@ -7,9 +8,8 @@ import { gsap } from 'gsap'
 import { onMounted } from 'vue'
 
 onMounted(() => {
-  gsap.set('.square', { xPercent: -100, yPercent: -100 })
-
   const square = document.querySelector('.square')
+  gsap.set(square, { xPercent: -100, yPercent: -100 })
 
   // Start: Using quickSetter ----------------
   // const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
@@ -50,7 +50,18 @@ onMounted(() => {
     gsap.quickTo(square, 'y', { duration: 0.6, ease: 'power3' })
   )
 
+  // Note: hold animation
+  const hold = document.querySelector('.hold')
+  gsap.set(hold, { xPercent: 0, yPercent: -100 })
+
+  const xHold = gsap.quickTo(hold, 'x', { duration: 0.6, ease: 'power3' })
+  const yHold = gsap.quickTo(hold, 'y', { duration: 0.6, ease: 'power3' })
+
+  // Note: listen to mousemove
   window.addEventListener('mousemove', (e) => {
+    xHold(e.x)
+    yHold(e.y)
+
     xTo(e.x)
     yTo(e.y)
   })
@@ -61,33 +72,40 @@ onMounted(() => {
   // quickTo() version, new in version 3.10.0: https://codepen.io/GreenSock/pen/xxpbORN?editors=0010
 
   // Note: this is only for the scale and opacity
-  let inOutAnim: gsap.core.Timeline
-
-  function animationMouseDown() {
-    inOutAnim.play()
-  }
-
-  function animationMouseUp() {
-    inOutAnim.reverse()
-  }
+  let inOutSquare: gsap.core.Timeline
+  let inOutHold: gsap.core.Timeline
 
   function initAnims() {
-    inOutAnim = gsap
+    inOutSquare = gsap
       .timeline({ paused: true })
       // Note: this is only for the scale
       .fromTo(square, { scale: 1 }, { scale: 10, duration: 0.5, ease: 'power2.inOut' })
       // Note: this is only for the opacity
       .to(square, { opacity: 0, duration: 0.5 }, 0)
+
+    inOutHold = gsap
+      .timeline({ paused: true })
+      .fromTo(hold, { opacity: 1 }, { opacity: 0, duration: 0.5, ease: 'power2.inOut' })
   }
 
-  function init() {
-    bindings()
-    initAnims()
+  function animationMouseDown() {
+    inOutSquare.play()
+    inOutHold.play()
+  }
+
+  function animationMouseUp() {
+    inOutSquare.reverse()
+    inOutHold.reverse()
   }
 
   function bindings() {
     window.addEventListener('mousedown', animationMouseDown)
     window.addEventListener('mouseup', animationMouseUp)
+  }
+
+  function init() {
+    initAnims()
+    bindings()
   }
 
   init()
@@ -103,5 +121,16 @@ onMounted(() => {
   left: 0;
   border: 1px solid rgba(250, 204, 21, 0.78);
   pointer-events: none;
+}
+
+.hold {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: rgba(250, 204, 21, 0.78);
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 </style>
