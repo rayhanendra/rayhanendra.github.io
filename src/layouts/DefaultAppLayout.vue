@@ -75,12 +75,17 @@
         </a>
       </div>
     </div>
+    <TheSquare />
+    <TheGrid />
+
     <slot />
     <!-- <footer></footer> -->
   </div>
 </template>
 
 <script setup lang="ts">
+import TheSquare from '@/components/TheSquare.vue'
+import TheGrid from '@/components/TheGrid.vue'
 import { MenuIcon, XIcon } from 'lucide-vue-next'
 import { onMounted, ref } from 'vue'
 
