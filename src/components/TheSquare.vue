@@ -100,7 +100,9 @@ onMounted(() => {
 
   function bindings() {
     window.addEventListener('mousedown', animationMouseDown)
+    window.addEventListener('touchstart', animationMouseDown)
     window.addEventListener('mouseup', animationMouseUp)
+    window.addEventListener('touchend', animationMouseUp)
   }
 
   function init() {

@@ -11,7 +11,7 @@
     </defs>
 
     <g id="maskReveal" mask="url(#theMask)">
-      <image id="regular" xlink:href="../assets/images/grid.svg" class="grid" />
+      <image id="regular" xlink:href="../assets/images/grid2.svg" class="grid" />
     </g>
     <!-- <div id="ring" class="square"></div> -->
     <!-- <circle id="ring" r="20" fill="none" stroke="#F8E71C" stroke-width="2" cx="800" cy="450" /> -->
@@ -37,7 +37,9 @@ onMounted(() => {
   }
 
   window.addEventListener('mousedown', mouseHandler)
+  window.addEventListener('touchstart', mouseHandler)
   window.addEventListener('mouseup', mouseHandler)
+  window.addEventListener('touchend', mouseHandler)
 
   // Note: older approach using gsap.to
   // Start: Using gsap.to ----------------
@@ -82,10 +84,13 @@ onMounted(() => {
 
 .grid {
   width: 100%;
-  opacity: 0.5;
+  opacity: 0.4;
   z-index: -1;
-  @media screen and (max-width: 768px) {
-    width: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+  .grid {
+    opacity: 0.5;
   }
 }
 
