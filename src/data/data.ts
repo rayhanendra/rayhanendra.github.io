@@ -234,12 +234,12 @@ export const data: IProject[] = [
     madeAt: 'University Project',
     link: '',
     github: 'https://github.com/rayhanendra/Dramagon',
-    buildWith: ['ReactJs', 'Redux Toolkit', 'Material UI'],
+    buildWith: ['ReactJs', 'Redux Toolkit', 'MaterialUI'],
     descriptions: [
       'Led a 6-person team in developing a mobile-first Progressive Web Application (PWA) website for a distribution system, catering to various roles such as Petani, Pedagang, Dinas Pertanian, etc.',
       'Took charge of leading the front-end, back-end, designer, and business team members',
       'Built the website using the React S framework, ensuring optimal performance and responsiveness',
-      'Implemented JSON data retrieved from the backend into Material UI components, resulting in a visually appealing and user-friendly interface',
+      'Implemented JSON data retrieved from the backend into MaterialUI components, resulting in a visually appealing and user-friendly interface',
       'Utilized Redux Toolkit as the chosen state management solution to efficiently manage and synchronize application state.'
     ],
     type: 'web',
@@ -321,7 +321,7 @@ export const data: IProject[] = [
     madeAt: 'ENB Mobile Care',
     link: 'https://www.enbmobilecare.co.id',
     github: '',
-    buildWith: ['Typescript', 'NextJs', 'MaterialUI', 'Figma'],
+    buildWith: ['TypeScript', 'NextJs', 'MaterialUI', 'Figma'],
     descriptions: [
       'The old company profile has been redesigned and remade with the latest technology.'
     ],
@@ -342,7 +342,7 @@ export const data: IProject[] = [
     madeAt: 'ENB Mobile Care',
     link: '',
     github: '',
-    buildWith: ['Typescript', 'NextJs', 'React Global State', 'MaterialUI'],
+    buildWith: ['TypeScript', 'NextJs', 'React Hook Global State', 'MaterialUI'],
     descriptions: [
       'Portal Plus Profile is a webview for the mobile app. It allows users to manage their profile and communicate with the admin.'
     ],
@@ -361,7 +361,7 @@ export const data: IProject[] = [
     subtitle: 'Responsive E-Commerce Website for Electronics',
     image: '',
     madeAt: 'ENB Mobile Care',
-    link: 'https://development.tradeinplus.co.id',
+    link: 'https://tradeinplus.co.id',
     github: '',
     buildWith: ['TypeScript', 'Vue3', 'Pinia', 'TailwindCSS', 'Storybook', 'Cypress', 'Figma'],
     descriptions: [
@@ -383,12 +383,12 @@ export const data: IProject[] = [
     id: Math.random().toString(36).substr(2, 9),
     year: '2023/1/27',
     title: 'Samsung Trade-In System Store',
-    subtitle: 'Mobile-first website with Samsung UI',
+    subtitle: 'Mobile-first website with Samsung UI - Partly Webview',
     image: '',
     madeAt: 'ENB Mobile Care',
     link: '',
     github: '',
-    buildWith: ['TypeScript', 'NextJs', 'Zustand', 'MaterialUI', 'Cypress'],
+    buildWith: ['TypeScript', 'NextJs', 'Zustand', 'MaterialUI', 'Cypress', 'Figma'],
     descriptions: [
       'Samsung Service Plus is a mobile-first website for Samsung customers.',
       'Its main feature is to trade in an old mobile phone and receive a discount voucher for a new Samsung mobile phone.'
@@ -405,12 +405,12 @@ export const data: IProject[] = [
     id: Math.random().toString(36).substr(2, 9),
     year: '2023/3/13',
     title: 'Samsung Trade-In System User',
-    subtitle: 'Mobile-first website with Samsung UI',
+    subtitle: 'Mobile-first website with Samsung UI - Partly Webview',
     image: '',
     madeAt: 'ENB Mobile Care',
     link: 'https://registrasi-tpss.tradeinplus.id/',
     github: '',
-    buildWith: ['TypeScript', 'ReactJs', 'Vite', 'MaterialUI', 'Cypress'],
+    buildWith: ['TypeScript', 'ReactJs', 'Zustand', 'Vite', 'MaterialUI', 'Cypress', 'Figma'],
     descriptions: [
       'This website allows users to register their trade-ins.',
       'Users can track the progress of their trade-in.',
