@@ -3,10 +3,10 @@
     id="archive"
     class="tw-container tw-max-w-screen-lg tw-mx-auto tw-py-28 tw-pt-28 tw-px-4"
   >
-    <BaseTitle title="Archive" />
+    <BaseTitle id="rows" title="Archive" />
     <table class="tw-w-full tw-table-auto">
       <thead>
-        <tr>
+        <tr id="rows">
           <th class="tw-font-semibold">Year</th>
           <th class="tw-font-semibold">Title</th>
           <th class="tw-font-semibold tw-hidden sm:tw-table-cell">Type</th>
@@ -17,11 +17,14 @@
       </thead>
       <tbody>
         <tr
+          id="rows"
           v-for="item in archives"
           :key="item.id"
-          class="tw-text-sm hover:tw-bg-yellow-400 hover:tw-bg-opacity-5 tw-transition tw-duration-300 tw-ease-in-out tw-cursor-pointer"
+          class="tw-text-sm hover:tw-bg-yellow-400 hover:tw-bg-opacity-5 tw-cursor-pointer"
           @click="handleShowDropdown(item.id)"
+          ref="activeRowRef"
         >
+          <!-- @click="handleShowDropdown(item.id)" -->
           <td class="tw-font-mono tw-text-yellow-400">{{ new Date(item.year).getFullYear() }}</td>
           <td class="tw-font-semibold">{{ item.title }}</td>
           <td class="tw-uppercase tw-hidden sm:tw-table-cell">{{ item.type }}</td>
@@ -101,12 +104,34 @@ import { ref } from 'vue'
 import { data } from '@/data/data'
 import { ExternalLinkIcon, GithubIcon } from 'lucide-vue-next'
 import BaseTitle from '@/components/BaseTitle.vue'
+import { onMounted } from 'vue'
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
-const showDropdown = ref('')
+onMounted(() => {
+  const rows = gsap.utils.toArray('#rows') as HTMLElement[]
 
-const handleShowDropdown = (id: string) => {
-  showDropdown.value !== id ? (showDropdown.value = id) : (showDropdown.value = '')
-}
+  rows.forEach((row) => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: row,
+        start: 'top bottom',
+        end: 'bottom 10%',
+        toggleActions: 'play none none reverse',
+        // markers: true,
+        id: 'rows'
+      }
+    })
+
+    tl.from(row, {
+      opacity: 0,
+      y: 100,
+      duration: 1,
+      ease: 'power3.inOut'
+    })
+  })
+})
 
 const acend = (a: any, b: any) => {
   const datePrev = Date.parse(a.year)
@@ -114,10 +139,13 @@ const acend = (a: any, b: any) => {
 
   return dateNext - datePrev
 }
-
 const archives = ref(data)
-
 archives.value.sort(acend)
+
+const showDropdown = ref('')
+const handleShowDropdown = (id: string) => {
+  showDropdown.value !== id ? (showDropdown.value = id) : (showDropdown.value = '')
+}
 </script>
 
 <style scoped>

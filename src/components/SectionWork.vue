@@ -1,66 +1,98 @@
 <template>
-  <section id="work" class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28 tw-px-4">
-    <BaseTitle number="02" title="Where I've Worked" />
-    <div class="tw-flex tw-flex-col sm:tw-flex-row tw-gap-12 tw-h-[364px]">
-      <div class="tw-flex tw-flex-row sm:tw-flex-col tw-w-full sm:tw-w-1/3 tw-h-fit">
-        <div
-          v-for="(item, index) in data"
-          :key="index"
-          class="tw-px-3 tw-py-4 tw-w-full tw-text-gray-400 hover:tw-text-yellow-400 tw-border-b sm:tw-border-b-0 sm:tw-border-l tw-border-opacity-10 tw-cursor-pointer hover:tw-bg-yellow-800 hover:tw-bg-opacity-10 hover:tw-opacity-100 tw-transition tw-duration-300 tw-ease-in-out"
-          :class="
-            index === activeIndex
-              ? 'tw-border-yellow-400 tw-border-opacity-100'
-              : 'tw-border-gray-400'
-          "
-          @click="activeIndex = index"
-        >
-          {{ item.company }}
+  <div id="work">
+    <section
+      id="work-section"
+      class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28 tw-px-4"
+    >
+      <BaseTitle number="02" title="Where I've Worked" />
+      <div class="tw-flex tw-flex-col sm:tw-flex-row tw-gap-12 tw-h-[364px]">
+        <div class="tw-flex tw-flex-row sm:tw-flex-col tw-w-full sm:tw-w-1/3 tw-h-fit">
+          <div
+            v-for="(item, index) in data"
+            :key="index"
+            class="tw-px-3 tw-py-4 tw-w-full tw-text-gray-400 hover:tw-text-yellow-400 tw-border-b sm:tw-border-b-0 sm:tw-border-l tw-border-opacity-10 tw-cursor-pointer hover:tw-bg-yellow-800 hover:tw-bg-opacity-10 hover:tw-opacity-100 tw-transition tw-duration-300 tw-ease-in-out"
+            :class="
+              index === activeIndex
+                ? 'tw-border-yellow-400 tw-border-opacity-100'
+                : 'tw-border-gray-400'
+            "
+            @click="activeIndex = index"
+          >
+            {{ item.company }}
+          </div>
         </div>
-      </div>
 
-      <div class="w-pl-12 tw-flex tw-flex-col tw-w-full">
-        <div
-          v-for="(item, index) in data"
-          :key="index"
-          class="tw-transition tw-duration-700 tw-ease-in-out tw-opacity-100"
-          :class="
-            index === activeIndex
-              ? 'tw-opacity-100 tw-transform -tw-translate-y-5 sm:tw-translate-y-0 sm:tw-translate-x-2 md:tw-translate-x-5'
-              : 'tw-opacity-0 tw-invisible'
-          "
-        >
-          <div v-if="index === activeIndex" class="">
-            <div class="tw-text-2xl tw-text-white tw-pb-2">
-              {{ item.title }}
-              <span class="tw-ml-2 tw-font-semibold tw-text-yellow-400">@ {{ item.company }}</span>
-            </div>
-            <div class="tw-text-sm tw-text-gray-400 tw-font-mono tw-pb-4">{{ item.date }}</div>
-            <ul class="tw-flex tw-flex-col tw-gap-2 tw-text-gray-400 sm:tw-list-disc tw-pr-4">
-              <li v-for="(description, index) in item.descriptions" :key="index">
-                {{ description }}
-              </li>
-            </ul>
-            <div
-              class="tw-flex tw-flex-wrap tw-gap-2 tw-py-4 tw-mt-4 tw-border-t tw-border-gray-400 tw-border-opacity-10"
-            >
+        <div class="w-pl-12 tw-flex tw-flex-col tw-w-full">
+          <div
+            v-for="(item, index) in data"
+            :key="index"
+            class="tw-transition tw-duration-700 tw-ease-in-out tw-opacity-100"
+            :class="
+              index === activeIndex
+                ? 'tw-opacity-100 tw-transform -tw-translate-y-5 sm:tw-translate-y-0 sm:tw-translate-x-2 md:tw-translate-x-5'
+                : 'tw-opacity-0 tw-invisible'
+            "
+          >
+            <div v-if="index === activeIndex" class="">
+              <div class="tw-text-2xl tw-text-white tw-pb-2">
+                {{ item.title }}
+                <span class="tw-ml-2 tw-font-semibold tw-text-yellow-400"
+                  >@ {{ item.company }}</span
+                >
+              </div>
+              <div class="tw-text-sm tw-text-gray-400 tw-font-mono tw-pb-4">{{ item.date }}</div>
+              <ul class="tw-flex tw-flex-col tw-gap-2 tw-text-gray-400 sm:tw-list-disc tw-pr-4">
+                <li v-for="(description, index) in item.descriptions" :key="index">
+                  {{ description }}
+                </li>
+              </ul>
               <div
-                v-for="(tool, index) in item.buildAt"
-                :key="index"
-                class="tw-inline-block tw-px-2 tw-py-1 tw-mr-2 tw-mb-2 tw-text-sm tw-text-gray-400 tw-bg-gray-800 tw-rounded-full tw-transition tw-duration-300 tw-ease-in-out hover:tw-bg-yellow-400 hover:tw-text-gray-800"
+                class="tw-flex tw-flex-wrap tw-gap-2 tw-py-4 tw-mt-4 tw-border-t tw-border-gray-400 tw-border-opacity-10"
               >
-                {{ tool }}
+                <div
+                  v-for="(tool, index) in item.buildAt"
+                  :key="index"
+                  class="tw-inline-block tw-px-2 tw-py-1 tw-mr-2 tw-mb-2 tw-text-sm tw-text-gray-400 tw-bg-gray-800 tw-rounded-full tw-transition tw-duration-300 tw-ease-in-out hover:tw-bg-yellow-400 hover:tw-text-gray-800"
+                >
+                  {{ tool }}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import BaseTitle from '@/components/BaseTitle.vue'
+import { onMounted } from 'vue'
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
+onMounted(() => {
+  const section = gsap.utils.toArray('#work-section') as HTMLElement[]
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: 'top 80%',
+      end: 'bottom 20%',
+      toggleActions: 'play none none reverse'
+      // markers: true
+    }
+  })
+
+  tl.from(section, {
+    opacity: 0,
+    y: 200,
+    duration: 1.8,
+    ease: 'power3.inOut'
+  })
+})
 
 const activeIndex = ref(0)
 

@@ -8,7 +8,7 @@
           : 'tw-translate-y-0 tw-opacity-100 tw-pointer-events-auto tw-shadow-lg'
       "
     >
-      <router-link to="/">
+      <router-link to="/#hero">
         <button>
           <img src="../assets/icons/rn-logo.svg" alt="logo" class="tw-w-12" />
         </button>

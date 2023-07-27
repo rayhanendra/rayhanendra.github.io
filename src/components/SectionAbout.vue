@@ -1,41 +1,71 @@
 <template>
-  <section id="about" class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28 tw-px-4">
-    <BaseTitle number="01" title="About Me" />
-    <p class="tw-pb-12 tw-text-justify">
-      My name is Rayhanendra, and I am a Frontend Engineer who strives for excellence in my work.
-      <br />
-      <br />
-      Creativity and uniqueness are some of my core traits, and I believe that working in a group
-      with a friendly atmosphere enhances my productivity.
-      <br />
-      <br />
-      As a professional, I prioritize both the quality of my work and the way I interact with
-      others.
-      <br />
-      <br />
-      For me, it's not just about implementing ideas but also about generating them.
-    </p>
-    <div class="tw-flex tw-justify-between tw-gap-4 tw-w-full tw-overflow-auto">
-      <div class="tw-font-bold tw-text-yellow-400">Skills</div>
-      <div
-        v-for="(skill, index) in skills"
-        :key="index"
-        class="tw-flex tw-flex-col tw-gap-2 tw-pb-4 sm:tw-pb-0"
-      >
-        <div class="tw-font-bold tw-text-white">{{ skill.title }}</div>
-        <div class="tw-flex tw-flex-col tw-font-mono tw-gap-1">
-          <div v-for="(data, index) in skill.data" :key="index">
-            {{ data }}
+  <div id="about">
+    <section
+      id="about-section"
+      class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28 tw-px-4"
+    >
+      <BaseTitle number="01" title="About Me" />
+      <p class="tw-pb-12 tw-text-justify">
+        My name is Rayhanendra, and I am a Frontend Engineer who strives for excellence in my work.
+        <br />
+        <br />
+        Creativity and uniqueness are some of my core traits, and I believe that working in a group
+        with a friendly atmosphere enhances my productivity.
+        <br />
+        <br />
+        As a professional, I prioritize both the quality of my work and the way I interact with
+        others.
+        <br />
+        <br />
+        For me, it's not just about implementing ideas but also about generating them.
+      </p>
+      <div class="tw-flex tw-justify-between tw-gap-4 tw-w-full tw-overflow-auto">
+        <div class="tw-font-bold tw-text-yellow-400">Skills</div>
+        <div
+          v-for="(skill, index) in skills"
+          :key="index"
+          class="tw-flex tw-flex-col tw-gap-2 tw-pb-4 sm:tw-pb-0"
+        >
+          <div class="tw-font-bold tw-text-white">{{ skill.title }}</div>
+          <div class="tw-flex tw-flex-col tw-font-mono tw-gap-1">
+            <div v-for="(data, index) in skill.data" :key="index">
+              {{ data }}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import BaseTitle from '@/components/BaseTitle.vue'
+import { onMounted } from 'vue'
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
+onMounted(() => {
+  const section = gsap.utils.toArray('#about-section') as HTMLElement[]
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: 'top 80%',
+      end: 'bottom 20%',
+      toggleActions: 'play none none reverse'
+      // markers: true
+    }
+  })
+
+  tl.from(section, {
+    opacity: 0,
+    y: 200,
+    duration: 1.8,
+    ease: 'power3.inOut'
+  })
+})
 
 const skills = ref([
   {
