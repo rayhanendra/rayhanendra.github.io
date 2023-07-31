@@ -39,7 +39,8 @@ export const data: IProject[] = [
     image: obuce,
     madeAt: 'UX Research Competition',
     buildWith: ['Figma'],
-    link: 'https://www.figma.com/file/mMKMx6uGYs7KhKrbUkxqoL/Mamen-Today?node-id=0%3A1&t=mXHmxL16ycwtspn4-1',
+    link: '',
+    // link: 'https://www.figma.com/file/mMKMx6uGYs7KhKrbUkxqoL/Mamen-Today?node-id=0%3A1&t=mXHmxL16ycwtspn4-1',
     github: '',
     descriptions: [
       'OBUCE - An application that could automatically determine the best diet to help the obese to do a diet based on their body needs such as calories and nutrition. The users will get their very own recommended meals and may differ from every other user. The user can cook their meal with the provided recipe or order the meal then it will be delivered in no time.',

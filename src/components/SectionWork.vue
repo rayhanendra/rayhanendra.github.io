@@ -4,9 +4,12 @@
       id="work-section"
       class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28 tw-px-4"
     >
-      <BaseTitle number="02" title="Where I've Worked" />
+      <BaseTitle id="work-title" number="02" title="Where I've Worked" />
       <div class="tw-flex tw-flex-col sm:tw-flex-row tw-gap-12 tw-h-[364px]">
-        <div class="tw-flex tw-flex-row sm:tw-flex-col tw-w-full sm:tw-w-1/3 tw-h-fit">
+        <div
+          id="work-tab"
+          class="tw-flex tw-flex-row sm:tw-flex-col tw-w-full sm:tw-w-1/3 tw-h-fit"
+        >
           <div
             v-for="(item, index) in data"
             :key="index"
@@ -22,7 +25,7 @@
           </div>
         </div>
 
-        <div class="w-pl-12 tw-flex tw-flex-col tw-w-full">
+        <div id="work-content" class="w-pl-12 tw-flex tw-flex-col tw-w-full">
           <div
             v-for="(item, index) in data"
             :key="index"
@@ -75,6 +78,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
   const section = gsap.utils.toArray('#work-section') as HTMLElement[]
+  const workTitle = document.getElementById('work-title') as HTMLElement
+  const workTab = document.getElementById('work-tab') as HTMLElement
+  const workContent = document.getElementById('work-content') as HTMLElement
 
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -86,12 +92,54 @@ onMounted(() => {
     }
   })
 
-  tl.from(section, {
+  tl.from(workTitle, {
     opacity: 0,
     y: 200,
     duration: 1.8,
     ease: 'power3.inOut'
   })
+
+  tl.from(
+    workTab,
+    {
+      opacity: 0,
+      x: -120,
+      duration: 1.8,
+      ease: 'power3.inOut'
+    },
+    '<0.5'
+  )
+
+  tl.from(
+    workContent,
+    {
+      opacity: 0,
+      x: 120,
+      duration: 1.8,
+      ease: 'power3.inOut'
+    },
+    '<0.5'
+  )
+
+  // Note: Regular fckin' animation
+  // const section = gsap.utils.toArray('#work-section') as HTMLElement[]
+
+  // const tl = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: section,
+  //     start: 'top 80%',
+  //     end: 'bottom 20%',
+  //     toggleActions: 'play none none reverse'
+  //     // markers: true
+  //   }
+  // })
+
+  // tl.from(section, {
+  //   opacity: 0,
+  //   y: 200,
+  //   duration: 1.8,
+  //   ease: 'power3.inOut'
+  // })
 })
 
 const activeIndex = ref(0)

@@ -33,10 +33,9 @@
             </button>
           </a>
         </div>
-        <button>
+        <button aria-label="Open Mobile Menu" @click="handleShowMobileMenu">
           <MenuIcon
             class="tw-block sm:tw-hidden tw-w-8 tw-h-8 tw-text-yellow-400 tw-transition tw-duration-300 tw-ease-in-out hover:tw-text-[#1C1F33] hover:tw-bg-yellow-300"
-            @click="handleShowMobileMenu"
           />
         </button>
       </div>
@@ -50,7 +49,7 @@
       "
     >
       <div class="tw-absolute tw-top-0 tw-right-0 tw-py-4 tw-px-6">
-        <button @click="handleShowMobileMenu">
+        <button aria-label="Close Mobile Menu" @click="handleShowMobileMenu">
           <XIcon
             class="tw-w-8 tw-h-8 tw-mt-0.5 tw-text-yellow-400 tw-transition tw-duration-300 tw-ease-in-out hover:tw-text-[#1C1F33] hover:tw-bg-yellow-300"
           />

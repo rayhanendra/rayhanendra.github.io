@@ -9,7 +9,7 @@
         <tr id="rows">
           <th class="tw-font-semibold">Year</th>
           <th class="tw-font-semibold">Title</th>
-          <th class="tw-font-semibold tw-hidden sm:tw-table-cell">Type</th>
+          <!-- <th class="tw-font-semibold tw-hidden sm:tw-table-cell">Type</th> -->
           <th class="tw-font-semibold tw-hidden sm:tw-table-cell">Made At</th>
           <th class="tw-font-semibold tw-hidden sm:tw-table-cell">Build With</th>
           <th class="tw-font-semibold">Link</th>
@@ -21,13 +21,12 @@
           v-for="item in archives"
           :key="item.id"
           class="tw-text-sm hover:tw-bg-yellow-400 hover:tw-bg-opacity-5 tw-cursor-pointer"
-          @click="handleShowDropdown(item.id)"
           ref="activeRowRef"
         >
           <!-- @click="handleShowDropdown(item.id)" -->
           <td class="tw-font-mono tw-text-yellow-400">{{ new Date(item.year).getFullYear() }}</td>
           <td class="tw-font-semibold">{{ item.title }}</td>
-          <td class="tw-uppercase tw-hidden sm:tw-table-cell">{{ item.type }}</td>
+          <!-- <td class="tw-uppercase tw-hidden sm:tw-table-cell">{{ item.type }}</td> -->
           <td class="tw-hidden sm:tw-table-cell">{{ item.madeAt }}</td>
           <td class="tw-hidden sm:tw-table-cell">
             <span
@@ -43,21 +42,25 @@
               :href="item.link"
               target="_blank"
               rel="noopener noreferrer"
-              class="tw-cursor-pointer"
+              class="tw-flex tw-items-center tw-justify-between tw-gap-1 tw-cursor-pointer"
             >
-              <ExternalLinkIcon class="tw-w-5" />
+              <div class="tw-min-w-max">
+                {{ filterHttpsAnd3w(item.link) }}
+              </div>
+              <ExternalLinkIcon class="tw-w-4" />
             </a>
             <a
               v-if="item.github"
               :href="item.github"
               target="_blank"
               rel="noopener noreferrer"
-              class="tw-cursor-pointer"
+              class="tw-flex tw-items-center tw-justify-between tw-gap-1 tw-cursor-pointer"
             >
-              <GithubIcon class="tw-w-5" />
+              Github
+              <GithubIcon class="tw-w-4" />
             </a>
           </td>
-          <Transition name="fade">
+          <!-- <Transition name="fade">
             <div
               id="dropdown"
               v-if="showDropdown === item.id"
@@ -69,10 +72,6 @@
                 <div class="tw-font-semibold">
                   {{ item.title }}
                 </div>
-                <!-- <XIcon
-                  class="tw-w-5 tw-cursor-pointer tw-absolute tw-right-0 tw-top-0 hover:tw-text-yellow-400 tw-transition tw-duration-300 tw-ease-in-out"
-                  @click="handleCloseDropdown"
-                /> -->
               </div>
               <ul>
                 <li v-for="desc in item.descriptions" :key="desc" class="tw-text-sm tw-mb-2">
@@ -80,7 +79,7 @@
                 </li>
               </ul>
             </div>
-          </Transition>
+          </Transition> -->
         </tr>
       </tbody>
     </table>
@@ -142,10 +141,15 @@ const acend = (a: any, b: any) => {
 const archives = ref(data)
 archives.value.sort(acend)
 
-const showDropdown = ref('')
-const handleShowDropdown = (id: string) => {
-  showDropdown.value !== id ? (showDropdown.value = id) : (showDropdown.value = '')
+const filterHttpsAnd3w = (url: string) => {
+  const regex = /(https?:\/\/)?(www\.)?/g
+  return url.replace(regex, '')
 }
+
+// const showDropdown = ref('')
+// const handleShowDropdown = (id: string) => {
+//   showDropdown.value !== id ? (showDropdown.value = id) : (showDropdown.value = '')
+// }
 </script>
 
 <style scoped>

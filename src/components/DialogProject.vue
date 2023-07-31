@@ -16,7 +16,12 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="@/assets/icons/github.png" class="tw-h-5" />
+              <img
+                src="@/assets/icons/github.png
+              "
+                alt="github"
+                class="tw-h-5"
+              />
             </a>
           </div>
         </div>
@@ -28,7 +33,7 @@
           <div class="tw-flex tw-justify-center tw-items-center">
             <img
               :src="project.image"
-              alt="project"
+              alt="project image"
               class="tw-w-full tw-h-[216px] tw-object-cover tw-object-center"
             />
           </div>
@@ -45,7 +50,7 @@
             <div v-for="(item, index) in project.process" :key="index">
               <img
                 :src="item.image"
-                alt="project"
+                alt="project image"
                 class="tw-w-fit tw-h-[216px] tw-object-cover tw-object-center"
               />
               <div class="tw-text-gray-400 tw-text-md tw-py-2">
