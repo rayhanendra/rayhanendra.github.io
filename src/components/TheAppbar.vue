@@ -9,8 +9,8 @@
       "
     >
       <router-link to="/#hero">
-        <button>
-          <img src="../assets/icons/rn-logo.svg" alt="logo" class="tw-w-12" />
+        <button aria-label="logo">
+          <img src="../assets/icons/rn-logo.svg" alt="logo" class="tw-w-12 tw-h-fit" />
         </button>
       </router-link>
       <div class="tw-flex tw-items-center">

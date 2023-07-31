@@ -24,7 +24,7 @@
         <img
           src="https://docs.vuejs.id//images/logo.png"
           alt="Vue"
-          class="tw-inline-block tw-w-4 tw-mb-0.5 tw-mr-1"
+          class="tw-inline-block tw-w-4 tw-h-4 tw-mb-0.5 tw-mr-1"
         />
         Vue 3</a
       >
@@ -36,7 +36,7 @@
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.svg.png"
           alt="Tailwind CSS"
-          class="tw-inline-block tw-w-4 tw-mb-0.5 tw-mr-1"
+          class="tw-inline-block tw-w-4 tw-h-2.5 tw-mb-0.5 tw-mr-1"
         />
         Tailwind CSS
       </a>
@@ -48,7 +48,7 @@
         <img
           src="https://greensock.com/uploads/monthly_2020_03/tweenmax.png.cf27916e926fbb328ff214f66b4c8429.png"
           alt="GSAP"
-          class="tw-inline-block tw-w-4 tw-mb-0.5 tw-mr-1"
+          class="tw-inline-block tw-w-4 tw-h-4 tw-mb-0.5 tw-mr-1"
         />
         GSAP
       </a>

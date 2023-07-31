@@ -57,7 +57,11 @@
             :alt="'button-' + item.title"
             @click="openDialog(item)"
           >
-            <img src="@/assets/icons/chevron-right.svg" alt="button-chevron" />
+            <img
+              src="@/assets/icons/chevron-right.svg"
+              alt="button-chevron"
+              class="tw-w-6 tw-h-6"
+            />
           </button>
         </div>
       </div>
