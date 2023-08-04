@@ -139,7 +139,7 @@ onMounted(() => {
         start: 'top 90%',
         end: 'bottom 10%',
         toggleActions: 'play none none reverse',
-        markers: true,
+        // markers: true,
         id: 'rows'
       }
     })
