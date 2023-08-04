@@ -11,7 +11,11 @@
     </defs>
 
     <g id="maskReveal" mask="url(#theMask)">
-      <image id="regular" xlink:href="../assets/images/grid2.svg" class="grid" />
+      <image
+        id="regular"
+        xlink:href="../assets/images/grid2.svg"
+        class="grid tw-hidden sm:tw-block"
+      />
     </g>
     <!-- <div id="ring" class="square"></div> -->
     <!-- <circle id="ring" r="20" fill="none" stroke="#F8E71C" stroke-width="2" cx="800" cy="450" /> -->
@@ -26,54 +30,59 @@ import { gsap } from 'gsap'
 import { onMounted } from 'vue'
 
 onMounted(() => {
-  // Note: mask reveal animation
-  const tl = gsap.timeline()
+  let mm = gsap.matchMedia(),
+    breakpoint = 640
 
-  tl.to('#masker', { duration: 2, attr: { r: 2400 }, ease: 'power2.in' })
-  tl.reversed(true)
+  mm.add(`(min-width: ${breakpoint}px)`, () => {
+    // Note: mask reveal animation
+    const tl = gsap.timeline()
 
-  function mouseHandler() {
-    tl.reversed(!tl.reversed())
-  }
+    tl.to('#masker', { duration: 2, attr: { r: 2400 }, ease: 'power2.in' })
+    tl.reversed(true)
 
-  window.addEventListener('mousedown', mouseHandler)
-  window.addEventListener('touchstart', mouseHandler)
-  window.addEventListener('mouseup', mouseHandler)
-  window.addEventListener('touchend', mouseHandler)
+    function mouseHandler() {
+      tl.reversed(!tl.reversed())
+    }
 
-  // Note: older approach using gsap.to
-  // Start: Using gsap.to ----------------
-  // const svg: any = document.querySelector('#demo')
-  // let pt = svg.createSVGPoint()
+    window.addEventListener('mousedown', mouseHandler)
+    window.addEventListener('touchstart', mouseHandler)
+    window.addEventListener('mouseup', mouseHandler)
+    window.addEventListener('touchend', mouseHandler)
 
-  // function getPoint(evt: MouseEvent) {
-  //   pt.x = evt.clientX
-  //   pt.y = evt.clientY
+    // Note: older approach using gsap.to
+    // Start: Using gsap.to ----------------
+    // const svg: any = document.querySelector('#demo')
+    // let pt = svg.createSVGPoint()
 
-  //   if (svg) return pt.matrixTransform(svg.getScreenCTM().inverse())
-  // }
+    // function getPoint(evt: MouseEvent) {
+    //   pt.x = evt.clientX
+    //   pt.y = evt.clientY
 
-  // function mouseMove(evt: MouseEvent) {
-  //   let newPoint = getPoint(evt)
-  //   gsap.to('#masker', {
-  //     duration: 2.5,
-  //     attr: { cx: newPoint.x, cy: newPoint.y },
-  //     ease: 'steps (6)'
-  //   })
-  // }
-  // window.addEventListener('mousemove', mouseMove)
-  // End: Using gsap.to ----------------
+    //   if (svg) return pt.matrixTransform(svg.getScreenCTM().inverse())
+    // }
 
-  // Note: newer approach using gsap.quickTo
-  // Start: Using gsap.quickTo ----------------
-  const xTo = gsap.quickTo('#masker', 'x', { duration: 1, ease: 'steps (6)' })
-  const yTo = gsap.quickTo('#masker', 'y', { duration: 1, ease: 'steps (6)' })
+    // function mouseMove(evt: MouseEvent) {
+    //   let newPoint = getPoint(evt)
+    //   gsap.to('#masker', {
+    //     duration: 2.5,
+    //     attr: { cx: newPoint.x, cy: newPoint.y },
+    //     ease: 'steps (6)'
+    //   })
+    // }
+    // window.addEventListener('mousemove', mouseMove)
+    // End: Using gsap.to ----------------
 
-  window.addEventListener('mousemove', (e) => {
-    xTo(e.x)
-    yTo(e.y)
+    // Note: newer approach using gsap.quickTo
+    // Start: Using gsap.quickTo ----------------
+    const xTo = gsap.quickTo('#masker', 'x', { duration: 1, ease: 'steps (6)' })
+    const yTo = gsap.quickTo('#masker', 'y', { duration: 1, ease: 'steps (6)' })
+
+    window.addEventListener('mousemove', (e) => {
+      xTo(e.x)
+      yTo(e.y)
+    })
+    // End: Using gsap.quickTo ----------------
   })
-  // End: Using gsap.quickTo ----------------
 })
 </script>
 
@@ -88,9 +97,9 @@ onMounted(() => {
   z-index: -1;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 640px) {
   .grid {
-    opacity: 0.5;
+    opacity: 0.26;
   }
 }
 

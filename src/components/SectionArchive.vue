@@ -12,7 +12,7 @@
           <!-- <th class="tw-font-semibold tw-hidden sm:tw-table-cell">Type</th> -->
           <th class="tw-font-semibold tw-hidden sm:tw-table-cell">Made At</th>
           <th class="tw-font-semibold tw-hidden sm:tw-table-cell">Build With</th>
-          <th class="tw-font-semibold">Link</th>
+          <th class="tw-font-semibold tw-hidden sm:tw-block">Link</th>
         </tr>
       </thead>
       <tbody>
@@ -25,7 +25,28 @@
         >
           <!-- @click="handleShowDropdown(item.id)" -->
           <td class="tw-font-mono tw-text-yellow-400">{{ new Date(item.year).getFullYear() }}</td>
-          <td class="tw-font-semibold">{{ item.title }}</td>
+          <td class="tw-font-semibold">
+            <div v-if="item.link" class="sm:tw-hidden">
+              <a
+                v-if="item.link"
+                :href="item.link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="tw-flex tw-items-center tw-justify-between tw-gap-1 tw-cursor-pointer"
+              >
+                <div class="tw-min-w-max">
+                  {{ filterHttpsAnd3w(item.title) }}
+                </div>
+                <ExternalLinkIcon class="tw-w-4" />
+              </a>
+            </div>
+            <div v-else class="sm:tw-hidden">
+              {{ item.title }}
+            </div>
+            <div class="tw-hidden sm:tw-block">
+              {{ item.title }}
+            </div>
+          </td>
           <!-- <td class="tw-uppercase tw-hidden sm:tw-table-cell">{{ item.type }}</td> -->
           <td class="tw-hidden sm:tw-table-cell">{{ item.madeAt }}</td>
           <td class="tw-hidden sm:tw-table-cell">
@@ -36,7 +57,7 @@
               >{{ tech }}
             </span>
           </td>
-          <td class="tw-flex tw-items-center tw-gap-1">
+          <td class="tw-hidden sm:tw-flex tw-items-center tw-gap-1">
             <a
               v-if="item.link"
               :href="item.link"
@@ -115,10 +136,10 @@ onMounted(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: row,
-        start: 'top bottom',
+        start: 'top 90%',
         end: 'bottom 10%',
         toggleActions: 'play none none reverse',
-        // markers: true,
+        markers: true,
         id: 'rows'
       }
     })
