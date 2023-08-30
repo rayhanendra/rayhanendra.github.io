@@ -20,7 +20,7 @@
           id="rows"
           v-for="item in archives"
           :key="item.id"
-          class="tw-text-sm hover:tw-bg-yellow-400 hover:tw-bg-opacity-5 tw-cursor-pointer"
+          class="tw-text-sm hover:tw-bg-yellow-400 hover:tw-bg-opacity-5"
           ref="activeRowRef"
         >
           <!-- @click="handleShowDropdown(item.id)" -->
@@ -137,7 +137,7 @@ onMounted(() => {
       scrollTrigger: {
         trigger: row,
         start: 'top 90%',
-        end: 'bottom 10%',
+        end: 'bottom 5%',
         toggleActions: 'play none none reverse',
         // markers: true,
         id: 'rows'
@@ -177,7 +177,8 @@ const filterHttpsAnd3w = (url: string) => {
 table,
 th,
 td {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0 16px;
 }
 th,
 td {
