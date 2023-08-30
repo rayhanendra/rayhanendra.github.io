@@ -16,13 +16,30 @@
           Striving for excellence through implementing best practices in all aspects.
         </div>
 
-        <a :href="resume" target="_blank" rel="noopener noreferrer">
-          <button
-            class="tw-mt-10 tw-p-4 tw-py-[12px] tw-px-8 tw-border tw-border-yellow-300 tw-text-yellow-300 tw-text-base tw-font-semibold tw-transition tw-duration-300 tw-ease-in-out tw-transform hover:tw-text-[#000000] hover:tw-bg-yellow-300 hover:tw-scale-105"
+        <div class="tw-flex tw-items-stretch tw-gap-4 tw-mt-10">
+          <a :href="resume" target="_blank" rel="noopener noreferrer">
+            <button
+              class="tw-py-[12px] tw-px-8 tw-border tw-border-yellow-300 tw-text-yellow-300 tw-text-base tw-font-semibold tw-transition tw-duration-300 tw-ease-in-out tw-transform hover:tw-text-[#000000] hover:tw-bg-yellow-300 hover:tw-scale-105"
+            >
+              Check Resume!
+            </button>
+          </a>
+          <a
+            href="https://github.com/rayhanendra"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="tw-cursor-pointer tw-flex tw-items-center tw-px-4 tw-border tw-border-yellow-300 tw-transition tw-duration-300 tw-ease-in-out hover:tw-text-[#000000] hover:tw-bg-yellow-300 hover:tw-scale-110"
+            @mouseover="githubHoverRef = true"
+            @mouseleave="githubHoverRef = false"
+            @focus="githubHoverRef = true"
           >
-            Check Resume!
-          </button>
-        </a>
+            <GithubIcon
+              :size="20"
+              class="tw-transition tw-duration-300 tw-ease-in-out"
+              :class="githubHoverRef ? 'tw-text-[#000000]  tw-scale-[135%]' : 'tw-text-yellow-300'"
+            />
+          </a>
+        </div>
       </div>
       <div
         id="content-right"
@@ -83,7 +100,11 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { gsap } from 'gsap'
+import { GithubIcon } from 'lucide-vue-next'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+
+const githubHoverRef = ref(false)
+
 gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
