@@ -1,5 +1,5 @@
 <template>
-  <div id="section1" class="tw-h-[1000px]">
+  <div id="rocket-three" class="tw-h-[1000px]">
     <canvas ref="experience" class="tw-sticky"></canvas>
   </div>
 </template>
@@ -17,8 +17,10 @@ import {
   TextureLoader,
   PointLightHelper,
   GridHelper,
-  MathUtils
+  MathUtils,
+  Group
 } from 'three'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
@@ -54,43 +56,76 @@ const updateCamera = () => {
 watch(aspectRatio, updateRenderer)
 watch(aspectRatio, updateCamera)
 
+// Camera
 camera = new PerspectiveCamera(75, aspectRatio.value, 0.1, 1000)
-// camera.position.setZ(10)
-// camera.position.setX(-4)
+const cameraInitialPosition = {
+  x: -2,
+  y: 2,
+  z: 4
+}
+camera.position.set(cameraInitialPosition.x, cameraInitialPosition.y, cameraInitialPosition.z)
 
 // Background
-
 const spaceTexture = new TextureLoader().load('space.jpeg')
 scene.background = spaceTexture
 
 // Lights
-
 const pointLight = new PointLight(0xffffff, 150, 1000, 2) // white
 pointLight.position.set(5, 5, 5)
 
 const ambientLight = new AmbientLight(0xf5f5f5) // soft white
 scene.add(pointLight, ambientLight)
 
-// // Helpers
-
+// Helpers
 const lightHelper = new PointLightHelper(pointLight)
 const gridHelper = new GridHelper(200, 50)
-scene.add(lightHelper, gridHelper)
+// scene.add(lightHelper, gridHelper)
 
 // Moon
-
 const moonTexture = new TextureLoader().load(Moon)
-
 const moon = new Mesh(
   new SphereGeometry(3, 32, 32),
   new MeshStandardMaterial({
     map: moonTexture
-    // color: 0xffffff
   })
 )
-
 scene.add(moon)
 
+// Rocket
+let rocket: Group
+const rocketInitialPosition = {
+  x: -3,
+  y: 0,
+  z: -10
+}
+const loader = new GLTFLoader()
+loader.load(
+  '/toy_rocket/scene.gltf',
+  (gltf) => {
+    scene.add(gltf.scene)
+    rocket = gltf.scene
+    gltf.animations // Array<THREE.AnimationClip>
+    gltf.scene // THREE.Group
+    gltf.scenes // Array<THREE.Group>
+    gltf.cameras // Array<THREE.Camera>
+    gltf.asset // Object
+
+    gltf.scene.rotateX(Math.PI / 3)
+    gltf.scene.position.set(
+      rocketInitialPosition.x,
+      rocketInitialPosition.y,
+      rocketInitialPosition.z
+    )
+  },
+  (xhr) => {
+    console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+  },
+  (error) => {
+    console.log('An error happened', error)
+  }
+)
+
+// Stars
 function addStar() {
   const light = new PointLight(0xff0040, 400)
   const geometry = new SphereGeometry(0.25, 24, 24)
@@ -118,40 +153,50 @@ const animate = () => {
   renderer.render(scene, camera)
 }
 
+// Scroll Animation
 const moveCamera = () => {
   const t = document.body.getBoundingClientRect().top
-  console.log(t)
-  //   moon.rotation.x += 0.05
-  moon.rotation.y += 0.075
-  //   moon.rotation.z += 0.05
 
+  // Moon rotation
+  moon.rotation.y += 0.075
+  // Moon position
   moon.position.z = t * 0.02
   moon.position.x = t * -0.02
   moon.position.y = t * 0.005
 
-  //   camera.position.z = 4 + t * -0.05
-  //   camera.position.x = -2 + t * 0.08
-  //   camera.position.y = 2 + t * -0.05
-  camera.position.z = 4
-  camera.position.x = -2
-  camera.position.y = 2
+  // Rocket
+  const radius = 2
+  const angle = t * -0.003
+  const x = Math.cos(angle) * radius + rocketInitialPosition.x
+  const y = Math.sin(angle) * radius + rocketInitialPosition.y
+  const z = angle * radius + rocketInitialPosition.z
+  // Update rocket position
+  rocket.position.set(x, y, z)
+  // Update rocket to always look at its direction
+  rocket.lookAt(0, 30, -20)
+
+  // Camera position
+  const cameraSpeed = -0.002
+  camera.position.x = cameraInitialPosition.x
+  camera.position.y = cameraInitialPosition.y
+  camera.position.z = t * cameraSpeed + cameraInitialPosition.z
 }
 
 onMounted(() => {
   gsap.timeline({
     scrollTrigger: {
-      trigger: '#section1',
+      trigger: '#rocket-three',
       scrub: 1,
       pin: true,
-      markers: true,
+      // markers: true,
       start: 'top top',
       end: '+=2000px'
     }
   })
 
   renderer = new WebGLRenderer({
-    canvas: experience.value as unknown as HTMLCanvasElement
-    // antialias: true
+    canvas: experience.value as unknown as HTMLCanvasElement,
+    antialias: true
   })
   // controls = new OrbitControls(camera, renderer.domElement)
   // controls.update()
