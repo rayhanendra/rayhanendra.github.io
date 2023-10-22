@@ -32,6 +32,7 @@
             @mouseover="githubHoverRef = true"
             @mouseleave="githubHoverRef = false"
             @focus="githubHoverRef = true"
+            aria-label="Github"
           >
             <GithubIcon
               :size="20"
