@@ -1,5 +1,11 @@
 <template>
-  <div id="rocket-three" class="tw-h-[1000px]">
+  <div id="progress-bar-container" class="progress-bar-container">
+    <label for="progress-bar" class="progress-bar-label tw-font-mono tw-text-md md:tw-text-xl">
+      Loading 🚀🌕
+    </label>
+    <progress id="progress-bar" max="100" value="0" class="progress-bar-progress"></progress>
+  </div>
+  <div id="rocket-three">
     <canvas ref="experience" class="tw-sticky"></canvas>
   </div>
 </template>
@@ -15,10 +21,11 @@ import {
   PointLight,
   AmbientLight,
   TextureLoader,
-  PointLightHelper,
-  GridHelper,
+  // PointLightHelper,
+  // GridHelper,
   MathUtils,
-  Group
+  Group,
+  LoadingManager
 } from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
@@ -65,6 +72,30 @@ const cameraInitialPosition = {
 }
 camera.position.set(cameraInitialPosition.x, cameraInitialPosition.y, cameraInitialPosition.z)
 
+// Loader
+const loadingManager = new LoadingManager()
+
+onMounted(() => {
+  const progressBar = document.getElementById('progress-bar') as HTMLProgressElement
+  const progressBarContainer = document.getElementById('progress-bar-container') as HTMLDivElement
+
+  // loadingManager.onStart = (url, item, total) => {
+  //   console.log('onStart', url, item, total)
+  // }
+
+  loadingManager.onProgress = (url, item, total) => {
+    progressBar.value = (item / total) * 100
+  }
+
+  loadingManager.onLoad = () => {
+    progressBarContainer.classList.add('animate')
+  }
+
+  // loadingManager.onError = (url) => {
+  //   console.log('onError', url)
+  // }
+})
+
 // Background
 const spaceTexture = new TextureLoader().load('space.jpeg')
 scene.background = spaceTexture
@@ -77,8 +108,8 @@ const ambientLight = new AmbientLight(0xf5f5f5) // soft white
 scene.add(pointLight, ambientLight)
 
 // Helpers
-const lightHelper = new PointLightHelper(pointLight)
-const gridHelper = new GridHelper(200, 50)
+// const lightHelper = new PointLightHelper(pointLight)
+// const gridHelper = new GridHelper(200, 50)
 // scene.add(lightHelper, gridHelper)
 
 // Moon
@@ -98,8 +129,8 @@ const rocketInitialPosition = {
   y: 0,
   z: -10
 }
-const loader = new GLTFLoader()
-loader.load(
+const gltfLoader = new GLTFLoader(loadingManager)
+gltfLoader.load(
   '/toy_rocket/scene.gltf',
   (gltf) => {
     scene.add(gltf.scene)
@@ -111,23 +142,21 @@ loader.load(
     gltf.asset // Object
 
     gltf.scene.rotateX(Math.PI / 3)
-    gltf.scene.position.set(
-      rocketInitialPosition.x,
-      rocketInitialPosition.y,
-      rocketInitialPosition.z
-    )
+    // Initial position calculated is (x, y, z) = (-1, 0, -10)
+    gltf.scene.position.set(-1, rocketInitialPosition.y, rocketInitialPosition.z)
+    rocket.lookAt(0, 30, -20)
   },
   (xhr) => {
-    console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+    // console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
   },
   (error) => {
-    console.log('An error happened', error)
+    // console.log('An error happened', error)
   }
 )
 
 // Stars
 function addStar() {
-  const light = new PointLight(0xff0040, 400)
+  // const light = new PointLight(0xff0040, 400)
   const geometry = new SphereGeometry(0.25, 24, 24)
   const material = new MeshStandardMaterial({
     color: 0xfde047
@@ -170,6 +199,7 @@ const moveCamera = () => {
   const x = Math.cos(angle) * radius + rocketInitialPosition.x
   const y = Math.sin(angle) * radius + rocketInitialPosition.y
   const z = angle * radius + rocketInitialPosition.z
+  // Initial position calculated is (x, y, z) = (-1, 0, -10)
   // Update rocket position
   rocket.position.set(x, y, z)
   // Update rocket to always look at its direction
@@ -190,22 +220,19 @@ onMounted(() => {
       pin: true,
       // markers: true,
       start: 'top top',
-      end: '+=2000px'
+      end: '+=1600px'
     }
   })
 
   renderer = new WebGLRenderer({
-    canvas: experience.value as unknown as HTMLCanvasElement,
-    antialias: true
+    canvas: experience.value as unknown as HTMLCanvasElement
+    // antialias: true
   })
   // controls = new OrbitControls(camera, renderer.domElement)
   // controls.update()
-
   updateRenderer()
   updateCamera()
-
   animate()
-
   document.body.onscroll = moveCamera
   moveCamera()
 })
@@ -217,4 +244,74 @@ onMounted(() => {
   top: 0;
   left: 0;
 } */
+
+.progress-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 2rem;
+  background-color: #1c1f33;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.animate {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.progress-bar-label {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar-progress {
+  width: 100%;
+  max-width: 20rem;
+  height: 0.5rem;
+
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* Get rid of the default border in Firefox. */
+  border: none;
+
+  /* Progress bar container */
+  background-color: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+
+  /* Progress bar */
+  &::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 20px;
+  }
+
+  /* Progress bar value */
+  &::-webkit-progress-value {
+    @apply tw-bg-yellow-400;
+    border-radius: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .progress-bar-progress {
+    height: 0.75rem;
+  }
+}
 </style>
