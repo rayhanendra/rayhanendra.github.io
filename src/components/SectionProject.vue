@@ -1,0 +1,224 @@
+<template>
+  <div id="projects">
+    <section
+      id="projects-section"
+      class="tw-container tw-mx-auto tw-w-full tw-max-w-3xl tw-py-28 tw-mt-96 sm:tw-mt-0 tw-px-4"
+    >
+      <BaseTitle id="projects-title" title="Projects" number="03" />
+      <div
+        id="projects-tab"
+        class="tw-flex tw-justify-between tw-gap-4 tw-border tw-border-gray-400 tw-border-opacity-10 tw-text-white tw-font-bold tw-text-lg tw-w-full tw-overflow-x-auto"
+      >
+        <div
+          v-for="(tab, index) in tabs"
+          :key="index"
+          @click="activeTab = tab"
+          class="tw-px-6 tw-py-2 tw-cursor-pointer tw-transition tw-duration-300 tw-ease-in-out tw-transform hover:tw-text-yellow-400 tw-min-w-fit tw-w-24 tw-text-center hover:tw-bg-yellow-400 hover:tw-bg-opacity-10"
+          :class="
+            activeTab === tab
+              ? 'tw-text-yellow-400 tw-border-t sm:tw-border-t-0 sm:tw-border-b tw-border-yellow-400'
+              : 'tw-text-white'
+          "
+        >
+          {{ tab }}
+        </div>
+      </div>
+      <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 tw-gap-4 tw-mt-4">
+        <div
+          v-for="(item, index) in filteredData"
+          id="projects-items"
+          :key="index"
+          class="tw-flex tw-border tw-border-gray-400 tw-border-opacity-10"
+          :class="
+            hovered === index
+              ? 'tw-bg-gray-800 tw-border tw-border-yellow-400 tw-border-opacity-100'
+              : ''
+          "
+          @mouseover="hovered = index"
+          @mouseleave="hovered = -1"
+        >
+          <div class="tw-w-full">
+            <div class="tw-text-white tw-font-bold tw-text-md tw-py-2 tw-px-4">
+              {{ item.title }}
+            </div>
+            <img
+              :src="item.image"
+              alt="project"
+              class="tw-w-full tw-h-[216px] tw-object-cover tw-object-center"
+            />
+          </div>
+          <button
+            class="tw-absolute tw-top-0 tw-right-0 tw-h-full tw-px-2 tw-border-l tw-border-yellow-300 tw-text-yellow-300 tw-text-base tw-font-semibold tw-transition tw-duration-300 tw-ease-in-out tw-transform"
+            :class="
+              hovered === index
+                ? 'tw-opacity-100 tw-bg-gray-800 '
+                : 'tw-opacity-0 tw-bg-gray-800 -tw-translate-x-4'
+            "
+            :alt="'button-' + item.title"
+            @click="openDialog(item)"
+          >
+            <img
+              src="@/assets/icons/chevron-right.svg"
+              alt="button-chevron"
+              class="tw-w-6 tw-h-6"
+            />
+          </button>
+        </div>
+      </div>
+      <!-- <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 tw-gap-4 tw-mt-4">
+        <div
+          v-for="(item, index) in filteredData"
+          id="projects-items"
+          :key="index"
+          class="tw-flex tw-border tw-border-gray-400 tw-border-opacity-10 hover:tw-text-yellow-400 tw-transition tw-duration-300 tw-ease-in-out"
+          :class="
+            hovered === index
+              ? 'tw-bg-gray-800 tw-border tw-border-yellow-400 tw-border-opacity-100'
+              : ''
+          "
+          @mouseover="hovered = index"
+          @mouseleave="hovered = -1"
+        >
+          <div class="tw-w-full">
+            <div class="tw-text-white tw-font-bold tw-text-md tw-py-2 tw-px-4">
+              {{ item.title }}
+            </div>
+            <img
+              :src="item.image"
+              alt="project"
+              class="tw-w-full tw-h-[216px] tw-object-cover tw-object-center"
+            />
+          </div>
+          <button
+            class="tw-absolute tw-top-0 tw-right-0 tw-h-full tw-px-2 tw-border-l tw-border-yellow-300 tw-text-yellow-300 tw-text-base tw-font-semibold tw-transition tw-duration-300 tw-ease-in-out tw-transform"
+            :class="
+              hovered === index
+                ? 'tw-opacity-100 tw-bg-gray-800 '
+                : 'tw-opacity-0 tw-bg-gray-800 -tw-translate-x-4'
+            "
+            :alt="'button-' + item.title"
+            @click="openDialog(item)"
+          >
+            <img src="@/assets/icons/chevron-right.svg" />
+          </button>
+        </div>
+      </div> -->
+    </section>
+  </div>
+
+  <DialogProject v-if="projectItem" ref="dialogProjectRef" :project="projectItem" />
+</template>
+
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+import BaseTitle from '@/components/BaseTitle.vue'
+import DialogProject from '@/components/DialogProject.vue'
+import { data } from '@/data/data'
+import { onMounted } from 'vue'
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
+const tabs = ref(['All', 'Web', 'UI/UX', 'Design', 'Game', 'Publication'])
+const activeTab = ref('All')
+const hovered = ref(-1)
+const projectItem = ref<IProject | null>(null)
+const dialogProjectRef = ref<InstanceType<typeof DialogProject>>()
+const projectData = ref(data)
+
+const filteredData = computed(() => {
+  projectData.value.filter((item) => item.image !== '')
+
+  if (activeTab.value === 'All') {
+    return projectData.value
+  } else {
+    return projectData.value.filter((item) => item.type === activeTab.value.toLowerCase())
+  }
+})
+
+const hideNoImage = () => {
+  projectData.value = projectData.value.filter((item) => item.image !== '')
+}
+
+hideNoImage()
+
+const openDialog = (item: any) => {
+  projectItem.value = item
+  dialogProjectRef.value?.openDialog()
+
+  // Note: to be implemented later
+  // router.push({
+  //   query: {
+  //     id: item.id
+  //   }
+  // })
+}
+
+onMounted(() => {
+  const section = document.getElementById('projects-section') as HTMLElement
+  const projectsTitle = document.getElementById('projects-title') as HTMLElement
+  const projectsTab = document.getElementById('projects-tab') as HTMLElement
+  const projectsItems = gsap.utils.toArray('#projects-items') as HTMLElement[]
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: 'top 80%',
+      end: 'bottom 20%',
+      toggleActions: 'play none none reverse'
+      // markers: true
+    }
+  })
+
+  tl.from(projectsTitle, {
+    opacity: 0,
+    y: 200,
+    duration: 1.8,
+    ease: 'power3.inOut'
+  })
+
+  tl.from(
+    projectsTab,
+    {
+      opacity: 0,
+      y: 200,
+      duration: 1.8,
+      ease: 'power3.inOut'
+    },
+    '<0.5'
+  )
+
+  projectsItems.forEach((item) => {
+    tl.from(
+      item,
+      {
+        opacity: 0,
+        y: 200,
+        duration: 0.8,
+        ease: 'power3.inOut'
+      },
+      item === projectsItems[0] ? '<1' : '<0.2'
+    )
+  })
+
+  // Note: Regular fckin' animation
+  // const section = document.getElementById('projects-section') as HTMLElement
+  // const tl = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: section,
+  //     start: 'top 80%',
+  //     end: 'bottom 20%',
+  //     toggleActions: 'play none none reverse'
+  //     // markers: true
+  //   }
+  // })
+  // tl.from(section, {
+  //   opacity: 0,
+  //   y: 200,
+  //   duration: 1.8,
+  //   ease: 'power3.inOut'
+  // })
+})
+</script>
+
+<style scoped></style>
